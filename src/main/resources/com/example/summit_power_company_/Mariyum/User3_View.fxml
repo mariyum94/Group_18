@@ -1,27 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefWidth="600" prefHeight="400" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.summit_power_company_.Mariyum.User3Controller">
-
-    <Label text="Finance Officer Panel" layoutX="200" layoutY="20" style="-fx-font-size: 20;" />
-
-    <Label text="Bill Amount:" layoutX="50" layoutY="70"/>
-    <TextField fx:id="billAmountField" layoutX="150" layoutY="70" prefWidth="150"/>
-    <Button text="Generate Bill" layoutX="320" layoutY="70" onAction="#handleGenerateBill"/>
-
-    <Label text="Transaction ID:" layoutX="50" layoutY="120"/>
-    <TextField fx:id="transactionIdField" layoutX="150" layoutY="120" prefWidth="150"/>
-    <Button text="Process Payment" layoutX="320" layoutY="120" onAction="#handleProcessPayment"/>
-
-    <Label text="Department:" layoutX="50" layoutY="170"/>
-    <ChoiceBox fx:id="departmentChoice" layoutX="150" layoutY="170" prefWidth="150"/>
-
-    <Label text="Budget Amount:" layoutX="50" layoutY="210"/>
-    <TextField fx:id="budgetAmountField" layoutX="150" layoutY="210" prefWidth="150"/>
-    <Button text="Allocate Budget" layoutX="320" layoutY="210" onAction="#handleAllocateBudget"/>
-
-    <Button text="View Financial Report" layoutX="200" layoutY="270" onAction="#handleViewReport"/>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.summit_power_company_.Mariyum.User3Controller"
+            prefHeight="400.0" prefWidth="600.0">
 
 </AnchorPane>
