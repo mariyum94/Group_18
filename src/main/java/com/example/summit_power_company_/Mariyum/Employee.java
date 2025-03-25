@@ -7,9 +7,9 @@ public class Employee {
     private String name;
     private LocalDate dob;
     private String department;
-    private float salary;
+    private double salary;
 
-    public Employee(int id, String name, LocalDate dob, String department, float salary) {
+    public Employee(int id, String name, LocalDate dob, String department, double salary) {
         this.id = id;
         this.name = name;
         this.dob = dob;
@@ -49,11 +49,11 @@ public class Employee {
         this.department = department;
     }
 
-    public float getSalary() {
+    public double getSalary() {
         return salary;
     }
 
-    public void setSalary(float salary) {
+    public void setSalary(double salary) {
         this.salary = salary;
     }
 
