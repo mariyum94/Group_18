@@ -61,7 +61,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                com.example.summit_power_company_/com.example.summit_power_company_.HelloApplication
+                                com.example.summit_power_company_/com.example.summit_power_company_.LoginApplication
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
