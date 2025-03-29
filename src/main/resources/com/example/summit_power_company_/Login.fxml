@@ -28,5 +28,6 @@
 
     
     <Hyperlink layoutX="260.0" layoutY="238.0" onAction="#ForgotPasswordHyperlink" text="Forgot Password?" />
+   <Label fx:id="errormassage" layoutX="112.0" layoutY="285.0" prefHeight="18.0" prefWidth="299.0" />
 
 </AnchorPane>

@@ -8,7 +8,6 @@ module com.example.summit_power_company_ {
     exports com.example.summit_power_company_;
     exports com.example.summit_power_company_.Mariyum;
 
-
 }
 
 
