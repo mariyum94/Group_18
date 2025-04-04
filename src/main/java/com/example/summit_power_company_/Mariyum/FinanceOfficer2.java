@@ -27,11 +27,6 @@ public class FinanceOfficer2 {
     }
 
     @FXML
-    void PaymentProcessingOnActionButton(ActionEvent event) {
-
-    }
-
-    @FXML
     void ReturnHomeOnActionButton(ActionEvent event) {
 
     }
