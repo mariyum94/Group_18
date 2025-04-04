@@ -1,4 +1,4 @@
 package com.example.summit_power_company_.Mariyum;
 
-public class User4Dashboard {
+public class HRManager1 {
 }
