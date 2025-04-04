@@ -1,6 +1,8 @@
 package com.example.summit_power_company_.Mariyum;
 
-public class Complaint {
+import java.io.Serializable;
+
+public class Complaint implements Serializable  {
     private int complaintId;
     private String type;
     private String details;

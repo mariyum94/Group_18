@@ -1,6 +1,8 @@
 package com.example.summit_power_company_.Mariyum;
 
-public class LeaveRequest {
+import java.io.Serializable;
+
+public class LeaveRequest implements Serializable {
     private int requestId;
     private int employeeId;
     private String leaveType;

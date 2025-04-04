@@ -1,8 +1,9 @@
 package com.example.summit_power_company_.Mariyum;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Employee {
+public class Employee implements Serializable {
     private int id;
     private String name;
     private LocalDate dob;

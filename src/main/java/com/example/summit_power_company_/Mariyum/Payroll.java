@@ -1,6 +1,8 @@
 package com.example.summit_power_company_.Mariyum;
 
-public class Payroll {
+import java.io.Serializable;
+
+public class Payroll implements Serializable {
     private int payrollId;
     private double basicSalary;
     private double bonus;
