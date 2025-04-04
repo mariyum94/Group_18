@@ -17,6 +17,7 @@ public class FinanceOfficer3 {
     @FXML
     private ComboBox selectemployeeComboBox;
 
+
     @FXML
     public void initialize() {
         selectemployeeComboBox.getItems().addAll("Basic Salary", "Overtime Data");
