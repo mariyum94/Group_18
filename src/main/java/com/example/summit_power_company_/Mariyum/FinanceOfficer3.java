@@ -35,7 +35,7 @@ public class FinanceOfficer3 {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("FinanceOfficerDashboard_View.fxml"));
             Scene scene = new Scene(root);
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {
