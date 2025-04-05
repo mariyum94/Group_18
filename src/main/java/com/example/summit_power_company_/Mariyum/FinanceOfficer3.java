@@ -15,7 +15,7 @@ public class FinanceOfficer3 {
     @FXML
     private TextField deductionTextField;
     @FXML
-    private ComboBox selectemployeeComboBox;
+    private ComboBox<String> selectemployeeComboBox;
 
 
     @FXML
