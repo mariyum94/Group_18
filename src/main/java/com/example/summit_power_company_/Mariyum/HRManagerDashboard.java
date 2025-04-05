@@ -6,7 +6,6 @@ public class HRManagerDashboard {
 
     @javafx.fxml.FXML
     void ApproveorDenyLeaveRequestsOnActionButton(ActionEvent event) {
-
     }
 
     @javafx.fxml.FXML

@@ -28,7 +28,7 @@ public class FinanceOfficer4 {
     @FXML
     private TextField RevenueTextField;
 
-    private final ObservableList<FinanceOfficerModelClass4> FinanceOfficerModelClass4list = FXCollections.observableArrayList();
+    private final ObservableList<FinanceOfficerModelClass1> FinanceOfficerModelClass1list = FXCollections.observableArrayList();
 
     @FXML
     public void initialize() {

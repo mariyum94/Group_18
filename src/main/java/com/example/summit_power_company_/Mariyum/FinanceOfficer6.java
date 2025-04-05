@@ -20,18 +20,18 @@ import java.io.IOException;
 public class FinanceOfficer6 {
 
     @FXML
-    private TableColumn<FinanceOfficerModelClass6, Double> CategoryColumn;
+    private TableColumn<FinanceOfficerModelClass3, Double> CategoryColumn;
 
     @FXML
-    private TableColumn<FinanceOfficerModelClass6, Integer> amountColumn;
+    private TableColumn<FinanceOfficerModelClass3, Integer> amountColumn;
 
     @FXML
-    private TableColumn<FinanceOfficerModelClass6, Integer> dateColumn;
+    private TableColumn<FinanceOfficerModelClass3, Integer> dateColumn;
 
     @FXML
-    private TableView<FinanceOfficerModelClass6> expensesTableView;
+    private TableView<FinanceOfficerModelClass3> expensesTableView;
 
-    private final ObservableList<FinanceOfficerModelClass6> FinanceOfficerModelClass6list = FXCollections.observableArrayList();
+    private final ObservableList<FinanceOfficerModelClass3> FinanceOfficerModelClass3list = FXCollections.observableArrayList();
     @FXML
     private TextField dateTextField;
     @FXML
@@ -45,7 +45,7 @@ public class FinanceOfficer6 {
         amountColumn.setCellValueFactory(new PropertyValueFactory<>("Amount"));
         CategoryColumn.setCellValueFactory(new PropertyValueFactory<>("Category"));
 
-        expensesTableView.setItems(FinanceOfficerModelClass6list);
+        expensesTableView.setItems(FinanceOfficerModelClass3list);
         CategoryTypeComboBox.getItems().addAll("Monthly", "Daily");
 }
 

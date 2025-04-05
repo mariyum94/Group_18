@@ -24,30 +24,30 @@ public class FinanceOfficer8 {
     private Label Statusmessage;
 
     @FXML
-    private TableColumn<FinanceOfficerModelClass8, Double> amountColumn;
+    private TableColumn<FinanceOfficerModelClass5, Double> amountColumn;
 
     @FXML
-    private TableView<FinanceOfficerModelClass8> billingTable;
+    private TableView<FinanceOfficerModelClass5> billingTable;
 
     @FXML
-    private TableColumn<FinanceOfficerModelClass8, String> customerColumn;
+    private TableColumn<FinanceOfficerModelClass5, String> customerColumn;
 
     @FXML
     private TextField customerSearchTextField;
 
     @FXML
-    private TableColumn<FinanceOfficerModelClass8, Integer> dueDateColumn;
+    private TableColumn<FinanceOfficerModelClass5, Integer> dueDateColumn;
 
     @FXML
     private DatePicker filterdatePicker;
 
     @FXML
-    private TableColumn<FinanceOfficerModelClass8, String> invoiceColumn;
+    private TableColumn<FinanceOfficerModelClass5, String> invoiceColumn;
 
     @FXML
-    private TableColumn<FinanceOfficerModelClass8, String> statusColumn;
+    private TableColumn<FinanceOfficerModelClass5, String> statusColumn;
 
-    private final ObservableList<FinanceOfficerModelClass8> FinanceOfficerModelClass8list = FXCollections.observableArrayList();
+    private final ObservableList<FinanceOfficerModelClass5> FinanceOfficerModelClass5list = FXCollections.observableArrayList();
 
     @FXML
     public void initialize() {
@@ -57,7 +57,7 @@ public class FinanceOfficer8 {
         dueDateColumn.setCellValueFactory(new PropertyValueFactory<>("Due Date"));
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("Status"));
 
-        billingTable.setItems(FinanceOfficerModelClass8list);
+        billingTable.setItems(FinanceOfficerModelClass5list);
     }
     @FXML
     void FilterOnActionButton(ActionEvent event) {

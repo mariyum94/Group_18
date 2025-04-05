@@ -19,13 +19,13 @@ import java.io.IOException;
 public class FinanceOfficer5 {
 
     @FXML
-    private TableView<FinanceOfficerModelClass5> allocationTable;
+    private TableView<FinanceOfficerModelClass2> allocationTable;
 
     @FXML
-    private TableColumn<FinanceOfficerModelClass5, String> departmentColumn;
+    private TableColumn<FinanceOfficerModelClass2, String> departmentColumn;
 
     @FXML
-    private TableColumn<FinanceOfficerModelClass5, String> amountColumn;
+    private TableColumn<FinanceOfficerModelClass2, String> amountColumn;
 
     @FXML
     private TextField departmentTextField;
@@ -33,14 +33,14 @@ public class FinanceOfficer5 {
     @FXML
     private TextField amountTextField;
 
-    private final ObservableList<FinanceOfficerModelClass5> FinanceOfficerModelClass5list = FXCollections.observableArrayList();
+    private final ObservableList<FinanceOfficerModelClass2> FinanceOfficerModelClass2list = FXCollections.observableArrayList();
 
     @FXML
     public void initialize() {
         departmentColumn.setCellValueFactory(new PropertyValueFactory<>("departmentName"));
         amountColumn.setCellValueFactory(new PropertyValueFactory<>("allocationAmount"));
 
-        allocationTable.setItems(FinanceOfficerModelClass5list);
+        allocationTable.setItems(FinanceOfficerModelClass2list);
     }
 
     @FXML

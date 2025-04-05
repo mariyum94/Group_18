@@ -23,27 +23,27 @@ public class FinanceOfficer7 {
     private ComboBox<String> CategoryTypeComboBox;
 
     @FXML
-    private TableColumn<FinanceOfficerModelClass8, Integer> amountColumn;
+    private TableColumn<FinanceOfficerModelClass5, Integer> amountColumn;
 
     @FXML
     private TextField amountTextField;
 
     @FXML
-    private TableColumn<FinanceOfficerModelClass7, Double> budgetColumn;
+    private TableColumn<FinanceOfficerModelClass4, Double> budgetColumn;
 
     @FXML
-    private TableColumn<FinanceOfficerModelClass7, String> categoryColumn;
+    private TableColumn<FinanceOfficerModelClass4, String> categoryColumn;
 
     @FXML
-    private TableColumn<FinanceOfficerModelClass7, Double> dateColumn;
+    private TableColumn<FinanceOfficerModelClass4, Double> dateColumn;
 
     @FXML
     private TextField dateTextField;
 
     @FXML
-    private TableView<FinanceOfficerModelClass7> financialDataTableView;
+    private TableView<FinanceOfficerModelClass4> financialDataTableView;
 
-    private final ObservableList<FinanceOfficerModelClass7> FinanceOfficerModelClass7list = FXCollections.observableArrayList();
+    private final ObservableList<FinanceOfficerModelClass4> FinanceOfficerModelClass4list = FXCollections.observableArrayList();
     @FXML
     private Label StatusLabel;
 
@@ -54,7 +54,7 @@ public class FinanceOfficer7 {
         categoryColumn.setCellValueFactory(new PropertyValueFactory<>("Category"));
         budgetColumn.setCellValueFactory(new PropertyValueFactory<>("Budget"));
 
-        financialDataTableView.setItems(FinanceOfficerModelClass7list);
+        financialDataTableView.setItems(FinanceOfficerModelClass4list);
         CategoryTypeComboBox.getItems().addAll("Monthly", "Daily");
     }
     @FXML

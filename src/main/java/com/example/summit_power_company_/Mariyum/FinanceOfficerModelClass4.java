@@ -3,47 +3,57 @@ package com.example.summit_power_company_.Mariyum;
 import java.io.Serializable;
 
 public class FinanceOfficerModelClass4 implements Serializable {
-    private String reportType; // "Monthly" or "Annual"
-    private double revenue;
-    private double expenses;
+    private String date;
+    private double amount;
+    private String category;
+    private double budget;
 
-    public FinanceOfficerModelClass4(String reportType, double revenue, double expenses) {
-        this.reportType = reportType;
-        this.revenue = revenue;
-        this.expenses = expenses;
+    public FinanceOfficerModelClass4(String date, double amount, String category, double budget) {
+        this.date = date;
+        this.amount = amount;
+        this.category = category;
+        this.budget = budget;
     }
 
-    public String getReportType() {
-        return reportType;
+    public String getDate() {
+        return date;
     }
 
-    public void setReportType(String reportType) {
-        this.reportType = reportType;
+    public void setDate(String date) {
+        this.date = date;
     }
 
-    public double getRevenue() {
-        return revenue;
+    public double getAmount() {
+        return amount;
     }
 
-    public void setRevenue(double revenue) {
-        this.revenue = revenue;
+    public void setAmount(double amount) {
+        this.amount = amount;
     }
 
-    public double getExpenses() {
-        return expenses;
+    public String getCategory() {
+        return category;
     }
 
-    public void setExpenses(double expenses) {
-        this.expenses = expenses;
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public double getBudget() {
+        return budget;
+    }
+
+    public void setBudget(double budget) {
+        this.budget = budget;
     }
 
     @Override
     public String toString() {
-        return "FinanceOfficerModelClass4{" +
-                "reportType='" + reportType + '\'' +
-                ", revenue=" + revenue +
-                ", expenses=" + expenses +
+        return "FinanceOfficerModelClass7{" +
+                "date='" + date + '\'' +
+                ", amount=" + amount +
+                ", category='" + category + '\'' +
+                ", budget=" + budget +
                 '}';
     }
 }
-
