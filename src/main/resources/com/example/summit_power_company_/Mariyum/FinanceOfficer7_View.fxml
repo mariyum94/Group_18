@@ -40,5 +40,6 @@
       <TextField fx:id="BudgetTextField" layoutX="179.0" layoutY="348.0" />
       <Label layoutX="91.0" layoutY="348.0" prefHeight="18.0" prefWidth="63.0" text="Budget" />
       <Button layoutX="455.0" layoutY="444.0" onAction="#ReturnHomeOnActionButton" text="Return Home" textFill="#178bc9" />
+      <Label fx:id="StatusLabel" layoutX="165.0" layoutY="447.0" prefHeight="26.0" prefWidth="224.0" />
     </children>
 </AnchorPane>

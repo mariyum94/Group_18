@@ -8,10 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
@@ -47,6 +44,8 @@ public class FinanceOfficer7 {
     private TableView<FinanceOfficerModelClass7> financialDataTableView;
 
     private final ObservableList<FinanceOfficerModelClass7> FinanceOfficerModelClass7list = FXCollections.observableArrayList();
+    @FXML
+    private Label StatusLabel;
 
     @FXML
     public void initialize() {
