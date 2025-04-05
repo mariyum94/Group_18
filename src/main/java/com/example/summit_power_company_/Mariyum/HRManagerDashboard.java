@@ -29,11 +29,6 @@ public class HRManagerDashboard {
     }
 
     @javafx.fxml.FXML
-    void OnActionButton(ActionEvent event) {
-
-    }
-
-    @javafx.fxml.FXML
     void ProcessPromotionsTransfersOnActionButton(ActionEvent event) {
 
     }
@@ -43,5 +38,8 @@ public class HRManagerDashboard {
 
     }
 
+    @javafx.fxml.FXML
+    public void RegisterNewEmployeesOnActionButton(ActionEvent actionEvent) {
+    }
 }
 
