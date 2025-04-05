@@ -1,4 +1,6 @@
 package com.example.summit_power_company_.Mariyum;
 
-public class HRManagerModelClass3 {
+import java.io.Serializable;
+
+public class HRManagerModelClass3 implements Serializable {
 }
