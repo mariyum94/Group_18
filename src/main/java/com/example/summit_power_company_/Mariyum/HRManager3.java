@@ -30,6 +30,10 @@ public class HRManager3 {
         employeeColumn.setCellValueFactory(new PropertyValueFactory<>("employee"));
         leaveTypeColumn.setCellValueFactory(new PropertyValueFactory<>("leave"));
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("Status"));
+        HRManagerModelClass2list.add(new HRManagerModelClass2("Ali", "Sick Leave", "Pending"));
+        HRManagerModelClass2list.add(new HRManagerModelClass2("Sara", "Casual Leave", "Pending"));
+
+        leaveRequestTable.getItems().setAll(HRManagerModelClass2list);
     }
     @FXML
     void ReturnHomeOnActionButton(ActionEvent event) {
