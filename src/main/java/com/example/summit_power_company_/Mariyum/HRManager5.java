@@ -5,6 +5,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 
+import java.util.ArrayList;
+
 public class HRManager5 {
 
     @FXML
@@ -12,6 +14,8 @@ public class HRManager5 {
 
     @FXML
     private ComboBox<String> traningtyprComboBox;
+
+    ArrayList<HRManagerModelClass3> HRManagerModelClass3list= new ArrayList<>();
 
     @FXML
     public void initialize() {
