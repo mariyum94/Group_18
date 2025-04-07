@@ -17,6 +17,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class FinanceOfficer8 {
 
@@ -24,30 +25,30 @@ public class FinanceOfficer8 {
     private Label Statusmessage;
 
     @FXML
-    private TableColumn<FinanceOfficerModelClass5, Double> amountColumn;
+    private TableColumn<FinanceOfficerModelClass4, Double> amountColumn;
 
     @FXML
-    private TableView<FinanceOfficerModelClass5> billingTable;
+    private TableView<FinanceOfficerModelClass4> billingTable;
 
     @FXML
-    private TableColumn<FinanceOfficerModelClass5, String> customerColumn;
+    private TableColumn<FinanceOfficerModelClass4, String> customerColumn;
 
     @FXML
     private TextField customerSearchTextField;
 
     @FXML
-    private TableColumn<FinanceOfficerModelClass5, Integer> dueDateColumn;
+    private TableColumn<FinanceOfficerModelClass4, Integer> dueDateColumn;
 
     @FXML
     private DatePicker filterdatePicker;
 
     @FXML
-    private TableColumn<FinanceOfficerModelClass5, String> invoiceColumn;
+    private TableColumn<FinanceOfficerModelClass4, String> invoiceColumn;
 
     @FXML
-    private TableColumn<FinanceOfficerModelClass5, String> statusColumn;
+    private TableColumn<FinanceOfficerModelClass4, String> statusColumn;
 
-    private final ObservableList<FinanceOfficerModelClass5> FinanceOfficerModelClass5list = FXCollections.observableArrayList();
+    ArrayList<FinanceOfficerModelClass4> FinanceOfficerModelClass4list= new ArrayList<>();
 
     @FXML
     public void initialize() {
@@ -56,8 +57,6 @@ public class FinanceOfficer8 {
         customerColumn.setCellValueFactory(new PropertyValueFactory<>("Customer"));
         dueDateColumn.setCellValueFactory(new PropertyValueFactory<>("Due Date"));
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("Status"));
-
-        billingTable.setItems(FinanceOfficerModelClass5list);
     }
     @FXML
     void FilterOnActionButton(ActionEvent event) {
@@ -82,4 +81,11 @@ public class FinanceOfficer8 {
 
     }
 
+    public Label getStatusmessage() {
+        return Statusmessage;
+    }
+
+    public void setStatusmessage(Label statusmessage) {
+        Statusmessage = statusmessage;
+    }
 }

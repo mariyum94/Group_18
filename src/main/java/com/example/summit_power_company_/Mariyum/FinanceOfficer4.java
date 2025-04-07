@@ -1,7 +1,5 @@
 package com.example.summit_power_company_.Mariyum;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -27,8 +25,6 @@ public class FinanceOfficer4 {
 
     @FXML
     private TextField RevenueTextField;
-
-    private final ObservableList<FinanceOfficerModelClass1> FinanceOfficerModelClass1list = FXCollections.observableArrayList();
 
     @FXML
     public void initialize() {

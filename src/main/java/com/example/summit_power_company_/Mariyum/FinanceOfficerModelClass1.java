@@ -3,47 +3,35 @@ package com.example.summit_power_company_.Mariyum;
 import java.io.Serializable;
 
 public class FinanceOfficerModelClass1 implements Serializable {
-    private String reportType; // "Monthly" or "Annual"
-    private double revenue;
-    private double expenses;
+    private String departmentName;
+    private String allocationAmount;
 
-    public FinanceOfficerModelClass1(String reportType, double revenue, double expenses) {
-        this.reportType = reportType;
-        this.revenue = revenue;
-        this.expenses = expenses;
+    public FinanceOfficerModelClass1(String departmentName, String allocationAmount) {
+        this.departmentName = departmentName;
+        this.allocationAmount = allocationAmount;
     }
 
-    public String getReportType() {
-        return reportType;
+    public String getDepartmentName() {
+        return departmentName;
     }
 
-    public void setReportType(String reportType) {
-        this.reportType = reportType;
+    public void setDepartmentName(String departmentName) {
+        this.departmentName = departmentName;
     }
 
-    public double getRevenue() {
-        return revenue;
+    public String getAllocationAmount() {
+        return allocationAmount;
     }
 
-    public void setRevenue(double revenue) {
-        this.revenue = revenue;
-    }
-
-    public double getExpenses() {
-        return expenses;
-    }
-
-    public void setExpenses(double expenses) {
-        this.expenses = expenses;
+    public void setAllocationAmount(String allocationAmount) {
+        this.allocationAmount = allocationAmount;
     }
 
     @Override
     public String toString() {
-        return "FinanceOfficerModelClass4{" +
-                "reportType='" + reportType + '\'' +
-                ", revenue=" + revenue +
-                ", expenses=" + expenses +
+        return "FinanceOfficerModelClass5{" +
+                "departmentName='" + departmentName + '\'' +
+                ", allocationAmount='" + allocationAmount + '\'' +
                 '}';
     }
 }
-

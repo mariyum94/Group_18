@@ -1,7 +1,5 @@
 package com.example.summit_power_company_.Mariyum;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,6 +13,7 @@ import javafx.stage.Stage;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class FinanceOfficer5 {
 
@@ -33,14 +32,13 @@ public class FinanceOfficer5 {
     @FXML
     private TextField amountTextField;
 
-    private final ObservableList<FinanceOfficerModelClass2> FinanceOfficerModelClass2list = FXCollections.observableArrayList();
+    ArrayList<FinanceOfficerModelClass1> FinanceOfficerModelClass1list= new ArrayList<>();
 
     @FXML
     public void initialize() {
         departmentColumn.setCellValueFactory(new PropertyValueFactory<>("departmentName"));
         amountColumn.setCellValueFactory(new PropertyValueFactory<>("allocationAmount"));
 
-        allocationTable.setItems(FinanceOfficerModelClass2list);
     }
 
     @FXML

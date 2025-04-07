@@ -3,24 +3,42 @@ package com.example.summit_power_company_.Mariyum;
 import java.io.Serializable;
 
 public class FinanceOfficerModelClass4 implements Serializable {
-    private String date;
+    private String customerName;
+    private String invoiceId;
+    private String dueDate;
     private double amount;
-    private String category;
-    private double budget;
+    private String status;
 
-    public FinanceOfficerModelClass4(String date, double amount, String category, double budget) {
-        this.date = date;
+    public FinanceOfficerModelClass4(String customerName, String invoiceId, String dueDate, double amount, String status) {
+        this.customerName = customerName;
+        this.invoiceId = invoiceId;
+        this.dueDate = dueDate;
         this.amount = amount;
-        this.category = category;
-        this.budget = budget;
+        this.status = status;
     }
 
-    public String getDate() {
-        return date;
+    public String getCustomerName() {
+        return customerName;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
+    }
+
+    public String getInvoiceId() {
+        return invoiceId;
+    }
+
+    public void setInvoiceId(String invoiceId) {
+        this.invoiceId = invoiceId;
+    }
+
+    public String getDueDate() {
+        return dueDate;
+    }
+
+    public void setDueDate(String dueDate) {
+        this.dueDate = dueDate;
     }
 
     public double getAmount() {
@@ -31,29 +49,22 @@ public class FinanceOfficerModelClass4 implements Serializable {
         this.amount = amount;
     }
 
-    public String getCategory() {
-        return category;
+    public String getStatus() {
+        return status;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
-    public double getBudget() {
-        return budget;
-    }
-
-    public void setBudget(double budget) {
-        this.budget = budget;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     @Override
     public String toString() {
-        return "FinanceOfficerModelClass7{" +
-                "date='" + date + '\'' +
+        return "FinanceOfficerModelClass8{" +
+                "customerName='" + customerName + '\'' +
+                ", invoiceId='" + invoiceId + '\'' +
+                ", dueDate='" + dueDate + '\'' +
                 ", amount=" + amount +
-                ", category='" + category + '\'' +
-                ", budget=" + budget +
+                ", status='" + status + '\'' +
                 '}';
     }
 }

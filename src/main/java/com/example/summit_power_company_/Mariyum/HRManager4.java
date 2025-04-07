@@ -7,7 +7,7 @@ import javafx.scene.control.ComboBox;
 public class HRManager4 {
 
     @FXML
-    private ComboBox<?> employeeComboBox;
+    private ComboBox<String> employeeComboBox;
 
     @FXML
     void ReturnHomeOnActionButton(ActionEvent event) {

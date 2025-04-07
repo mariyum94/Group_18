@@ -6,7 +6,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="476.0" prefWidth="594.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="com.example.summit_power_company_.Mariyum.HRManager3">
+<AnchorPane prefHeight="476.0" prefWidth="594.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.summit_power_company_.Mariyum.HRManager3">
     <children>
         <TableView fx:id="leaveRequestTable" layoutX="33.0" layoutY="134.0" prefHeight="123.0" prefWidth="528.0">
             <columns>

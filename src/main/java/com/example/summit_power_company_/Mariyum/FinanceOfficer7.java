@@ -1,7 +1,5 @@
 package com.example.summit_power_company_.Mariyum;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,6 +11,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class FinanceOfficer7 {
 
@@ -23,29 +22,30 @@ public class FinanceOfficer7 {
     private ComboBox<String> CategoryTypeComboBox;
 
     @FXML
-    private TableColumn<FinanceOfficerModelClass5, Integer> amountColumn;
+    private TableColumn<FinanceOfficerModelClass4, Integer> amountColumn;
 
     @FXML
     private TextField amountTextField;
 
     @FXML
-    private TableColumn<FinanceOfficerModelClass4, Double> budgetColumn;
+    private TableColumn<FinanceOfficerModelClass3, Double> budgetColumn;
 
     @FXML
-    private TableColumn<FinanceOfficerModelClass4, String> categoryColumn;
+    private TableColumn<FinanceOfficerModelClass3, String> categoryColumn;
 
     @FXML
-    private TableColumn<FinanceOfficerModelClass4, Double> dateColumn;
+    private TableColumn<FinanceOfficerModelClass3, Double> dateColumn;
 
     @FXML
     private TextField dateTextField;
 
     @FXML
-    private TableView<FinanceOfficerModelClass4> financialDataTableView;
+    private TableView<FinanceOfficerModelClass3> financialDataTableView;
 
-    private final ObservableList<FinanceOfficerModelClass4> FinanceOfficerModelClass4list = FXCollections.observableArrayList();
     @FXML
     private Label StatusLabel;
+
+    ArrayList<FinanceOfficerModelClass3> FinanceOfficerModelClass3list= new ArrayList<>();
 
     @FXML
     public void initialize() {
@@ -54,7 +54,6 @@ public class FinanceOfficer7 {
         categoryColumn.setCellValueFactory(new PropertyValueFactory<>("Category"));
         budgetColumn.setCellValueFactory(new PropertyValueFactory<>("Budget"));
 
-        financialDataTableView.setItems(FinanceOfficerModelClass4list);
         CategoryTypeComboBox.getItems().addAll("Monthly", "Daily");
     }
     @FXML

@@ -4,13 +4,15 @@ import java.io.Serializable;
 
 public class FinanceOfficerModelClass3 implements Serializable {
     private String date;
-    private double expenseAmount;
+    private double amount;
     private String category;
+    private double budget;
 
-    public FinanceOfficerModelClass3(String date, double expenseAmount, String category) {
+    public FinanceOfficerModelClass3(String date, double amount, String category, double budget) {
         this.date = date;
-        this.expenseAmount = expenseAmount;
+        this.amount = amount;
         this.category = category;
+        this.budget = budget;
     }
 
     public String getDate() {
@@ -21,12 +23,12 @@ public class FinanceOfficerModelClass3 implements Serializable {
         this.date = date;
     }
 
-    public double getExpenseAmount() {
-        return expenseAmount;
+    public double getAmount() {
+        return amount;
     }
 
-    public void setExpenseAmount(double expenseAmount) {
-        this.expenseAmount = expenseAmount;
+    public void setAmount(double amount) {
+        this.amount = amount;
     }
 
     public String getCategory() {
@@ -37,12 +39,21 @@ public class FinanceOfficerModelClass3 implements Serializable {
         this.category = category;
     }
 
+    public double getBudget() {
+        return budget;
+    }
+
+    public void setBudget(double budget) {
+        this.budget = budget;
+    }
+
     @Override
     public String toString() {
-        return "FinanceOfficerModelClass6{" +
+        return "FinanceOfficerModelClass7{" +
                 "date='" + date + '\'' +
-                ", expenseAmount=" + expenseAmount +
+                ", amount=" + amount +
                 ", category='" + category + '\'' +
+                ", budget=" + budget +
                 '}';
     }
 }
