@@ -4,21 +4,33 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+
+import java.util.ArrayList;
 
 public class HRManager3 {
 
     @FXML
-    private TableColumn<?, ?> employeeColumn;
+    private TableColumn<HRManagerModelClass2, String> employeeColumn;
 
     @FXML
-    private TableView<?> leaveRequestTable;
+    private TableView<HRManagerModelClass2> leaveRequestTable;
 
     @FXML
-    private TableColumn<?, ?> leaveTypeColumn;
+    private TableColumn<HRManagerModelClass2, String> leaveTypeColumn;
 
     @FXML
-    private TableColumn<?, ?> statusColumn;
+    private TableColumn<HRManagerModelClass2, String> statusColumn;
 
+    ArrayList<HRManagerModelClass2> HRManagerModelClass2list= new ArrayList<>();
+
+    @FXML
+    public void initialize() {
+
+        employeeColumn.setCellValueFactory(new PropertyValueFactory<>("employee"));
+        leaveTypeColumn.setCellValueFactory(new PropertyValueFactory<>("leave"));
+        statusColumn.setCellValueFactory(new PropertyValueFactory<>("Status"));
+    }
     @FXML
     void ReturnHomeOnActionButton(ActionEvent event) {
 
