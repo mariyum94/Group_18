@@ -7,7 +7,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="482.0" prefWidth="647.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.summit_power_company_.Mariyum.HRManager7">
+<AnchorPane prefHeight="482.0" prefWidth="647.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.summit_power_company_.Mariyum.HRManager8">
 
     <!-- ComboBox to choose report type -->
     <ComboBox fx:id="reportTypeComboBox" layoutX="228.0" layoutY="129.0" prefWidth="200" />

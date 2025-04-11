@@ -10,7 +10,7 @@ import java.io.IOException;
 public class HRManager7 {
 
     @FXML
-    private ComboBox<String> complaintComboBox;
+    private ComboBox <String> complaintComboBox;
     @FXML
     private Label statusLabel;
 
@@ -35,4 +35,11 @@ public class HRManager7 {
 
     }
 
+    @Deprecated
+    public void GenerateReportOnActionButton(ActionEvent actionEvent) {
+    }
+
+    @Deprecated
+    public void ExporttoPDFOnActionButton(ActionEvent actionEvent) {
+    }
 }
