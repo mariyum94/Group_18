@@ -2,6 +2,8 @@ package com.example.summit_power_company_.Mariyum;
 
 import javafx.event.ActionEvent;
 
+import java.io.IOException;
+
 public class HRManagerDashboard {
 
     @javafx.fxml.FXML
@@ -39,7 +41,13 @@ public class HRManagerDashboard {
     }
 
     @javafx.fxml.FXML
-    public void RegisterNewEmployeesOnActionButton(ActionEvent actionEvent) {
+    public void RegisterNewEmployeesOnActionButton(ActionEvent actionEvent)  throws IOException {
+        SceneSwitcher.switchTo("FinanceOfficer6_View.fxml", actionEvent);
+    }
+
+    @javafx.fxml.FXML
+    public void LogOutOnActionButton(ActionEvent actionEvent) throws IOException {
+        SceneSwitcher.switchTo("Login.fxml", actionEvent);
     }
 }
 

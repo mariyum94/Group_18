@@ -43,4 +43,9 @@ public class FinanceOfficerDashboard {
     public void ViewFinancialReportsOnActionButton(ActionEvent actionEvent) throws IOException {
         SceneSwitcher.switchTo("FinanceOfficer7_View.fxml", actionEvent);
     }
+
+    @javafx.fxml.FXML
+    public void LogOutOnActionButton(ActionEvent actionEvent) throws IOException{
+        SceneSwitcher.switchTo("Login.fxml", actionEvent);
+    }
 }

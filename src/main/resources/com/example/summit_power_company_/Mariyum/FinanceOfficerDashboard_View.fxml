@@ -4,7 +4,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.summit_power_company_.Mariyum.FinanceOfficerDashboard">
    <children>
       <Button layoutX="102.0" layoutY="86.0" mnemonicParsing="false" onAction="#GenerateElectricityBillsOnActionButton" prefHeight="26.0" prefWidth="152.0" text="Generate Electricity Bills" textFill="#1673ec" />
@@ -16,5 +15,6 @@
       <Button layoutX="354.0" layoutY="187.0" mnemonicParsing="false" onAction="#ExportFinancialDataOnActionButton" prefHeight="26.0" prefWidth="152.0" text="Export Financial Data" textFill="#1673ec" />
       <Button layoutX="354.0" layoutY="245.0" mnemonicParsing="false" onAction="#HandleLatePaymentsOnActionButton" prefHeight="26.0" prefWidth="152.0" text="Handle Late Payments" textFill="#1673ec" />
       <Label layoutX="163.0" layoutY="20.0" prefHeight="27.0" prefWidth="262.0" style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Finance Officer Dashboard" textFill="#10b7de" />
+      <Button layoutX="516.0" layoutY="354.0" mnemonicParsing="false" onAction="#LogOutOnActionButton" text="LogOut" textFill="#0682d4" />
    </children>
 </AnchorPane>
