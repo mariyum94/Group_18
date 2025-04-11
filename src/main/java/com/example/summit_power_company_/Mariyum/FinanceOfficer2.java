@@ -22,7 +22,6 @@ public class FinanceOfficer2 {
 
     @FXML
     private Label successMessageLabel;
-    private ActionEvent actionEvent;
 
     @FXML
     void FetchPaymentStatusOnActionButton(ActionEvent event) {
@@ -35,7 +34,7 @@ public class FinanceOfficer2 {
     }
 
     @FXML
-    void ReturnHomeOnActionButton(ActionEvent event) throws IOException {
+    void ReturnHomeOnActionButton(ActionEvent actionEvent) throws IOException {
         SceneSwitcher.switchTo("FinanceOfficerDashboard_View.fxml", actionEvent);
     }
 }
