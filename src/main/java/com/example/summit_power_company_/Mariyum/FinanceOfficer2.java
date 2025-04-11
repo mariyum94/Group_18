@@ -22,6 +22,7 @@ public class FinanceOfficer2 {
 
     @FXML
     private Label successMessageLabel;
+    private ActionEvent actionEvent;
 
     @FXML
     void FetchPaymentStatusOnActionButton(ActionEvent event) {
@@ -34,16 +35,7 @@ public class FinanceOfficer2 {
     }
 
     @FXML
-    void ReturnHomeOnActionButton(ActionEvent event) {
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("FinanceOfficerDashboard_View.fxml"));
-            Scene scene = new Scene(root);
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    void ReturnHomeOnActionButton(ActionEvent event) throws IOException {
+        SceneSwitcher.switchTo("FinanceOfficerDashboard_View.fxml", actionEvent);
     }
-
 }
