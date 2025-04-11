@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class HRManager5 {
@@ -28,8 +29,8 @@ public class HRManager5 {
     }
 
     @FXML
-    void ReturnHomeOnActionButton(ActionEvent event) {
-
+    void ReturnHomeOnActionButton(ActionEvent actionEvent) throws IOException {
+        SceneSwitcher.switchTo("HRManagerDashboard_View.fxml", actionEvent);
     }
 
 }

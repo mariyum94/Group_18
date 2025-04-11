@@ -6,6 +6,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
+import java.io.IOException;
+
 public class HRManager1 {
 
     @FXML
@@ -30,8 +32,8 @@ public class HRManager1 {
     private Label statusLabel;
 
     @FXML
-    void ReturnHomeOnActionButton(ActionEvent event) {
-
+    void ReturnHomeOnActionButton(ActionEvent actionEvent) throws IOException {
+        SceneSwitcher.switchTo("HRManagerDashboard_View.fxml", actionEvent);
     }
 
     @FXML

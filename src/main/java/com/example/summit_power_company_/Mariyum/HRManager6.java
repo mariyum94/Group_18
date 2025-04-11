@@ -3,6 +3,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 
+import java.io.IOException;
+
 public class HRManager6 {
 
     @FXML
@@ -12,8 +14,13 @@ public class HRManager6 {
     private ComboBox<String> newrolecomboBox;
 
     @FXML
-    void ReturnHomeOnActionButton(ActionEvent event) {
-
+    public void initialize() {
+        employeecomboBox.getItems().addAll("Present", "Absent", "Leave");
+        newrolecomboBox.getItems().addAll(" Developer", "Team Lead", "HR Manager");
+    }
+    @FXML
+    void ReturnHomeOnActionButton(ActionEvent actionEvent) throws IOException {
+        SceneSwitcher.switchTo("HRManagerDashboard_View.fxml", actionEvent);
     }
 
     @FXML
