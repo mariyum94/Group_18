@@ -7,42 +7,42 @@ import java.io.IOException;
 public class HRManagerDashboard {
 
     @javafx.fxml.FXML
-    void ApproveorDenyLeaveRequestsOnActionButton(ActionEvent event) {
+    void ApproveorDenyLeaveRequestsOnActionButton(ActionEvent actionEvent)  throws IOException {
+        SceneSwitcher.switchTo("HRManager3_View.fxml", actionEvent);
+    }
+    @javafx.fxml.FXML
+    void EvaluatePerformanceOnActionButton(ActionEvent actionEvent)  throws IOException {
+        SceneSwitcher.switchTo("HRManager4_View.fxml", actionEvent);
     }
 
     @javafx.fxml.FXML
-    void EvaluatePerformanceOnActionButton(ActionEvent event) {
-
+    void GeneratingEmployeeReportsOnActionButton(ActionEvent actionEvent)  throws IOException {
+        SceneSwitcher.switchTo("HRManager8_View.fxml", actionEvent);
     }
 
     @javafx.fxml.FXML
-    void GeneratingEmployeeReportsOnActionButton(ActionEvent event) {
-
+    void HandleEmployeeComplaintsOnActionButton(ActionEvent actionEvent)  throws IOException {
+        SceneSwitcher.switchTo("HRManager7_View.fxml", actionEvent);
     }
 
     @javafx.fxml.FXML
-    void HandleEmployeeComplaintsOnActionButton(ActionEvent event) {
-
+    void ManageAttendanceOnActionButton(ActionEvent actionEvent)  throws IOException {
+        SceneSwitcher.switchTo("HRManager2_View.fxml", actionEvent);
     }
 
     @javafx.fxml.FXML
-    void ManageAttendanceOnActionButton(ActionEvent event) {
-
+    void ProcessPromotionsTransfersOnActionButton(ActionEvent actionEvent)  throws IOException {
+        SceneSwitcher.switchTo("HRManager6_View.fxml", actionEvent);
     }
 
     @javafx.fxml.FXML
-    void ProcessPromotionsTransfersOnActionButton(ActionEvent event) {
-
-    }
-
-    @javafx.fxml.FXML
-    void ScheduleTrainingProgramsOnActionButton(ActionEvent event) {
-
+    void ScheduleTrainingProgramsOnActionButton(ActionEvent actionEvent)  throws IOException {
+        SceneSwitcher.switchTo("HRManager5_View.fxml", actionEvent);
     }
 
     @javafx.fxml.FXML
     public void RegisterNewEmployeesOnActionButton(ActionEvent actionEvent)  throws IOException {
-        SceneSwitcher.switchTo("FinanceOfficer6_View.fxml", actionEvent);
+        SceneSwitcher.switchTo("HRManager1_View.fxml", actionEvent);
     }
 
     @javafx.fxml.FXML
