@@ -10,6 +10,8 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+
 public class HRManager4 {
 
     @FXML
@@ -18,18 +20,13 @@ public class HRManager4 {
     @FXML
     private ComboBox<String> employeeComboBox;
     @FXML
-    public void initialize() {
+    public void initialize()
+    {
         employeeComboBox.getItems().addAll("Present", "Absent", "Leave");
     }
     @FXML
-    void ReturnHomeOnActionButton(ActionEvent event) {
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("HRManagerDashboard.fxml"));
-            Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene(root));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    void ReturnHomeOnActionButton(ActionEvent actionEvent) throws IOException {
+        SceneSwitcher.switchTo("HRManagerDashboard_View.fxml", actionEvent);
     }
 
     @FXML

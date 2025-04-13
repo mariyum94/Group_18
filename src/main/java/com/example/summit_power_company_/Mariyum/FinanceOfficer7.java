@@ -2,10 +2,6 @@ package com.example.summit_power_company_.Mariyum;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
@@ -72,16 +68,7 @@ public class FinanceOfficer7 {
     }
 
     @FXML
-    void ReturnHomeOnActionButton(ActionEvent event) {
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("FinanceOfficerDashboard_View.fxml"));
-            Scene scene = new Scene(root);
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    void ReturnHomeOnActionButton(ActionEvent actionEvent) throws IOException {
+        SceneSwitcher.switchTo("FinanceOfficerDashboard_View.fxml", actionEvent);
     }
-
 }

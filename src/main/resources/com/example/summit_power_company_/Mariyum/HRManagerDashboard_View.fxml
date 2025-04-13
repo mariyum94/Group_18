@@ -15,5 +15,6 @@
         <Button layoutX="360.0" layoutY="258.0" mnemonicParsing="false" onAction="#HandleEmployeeComplaintsOnActionButton" prefHeight="26.0" prefWidth="185.0" text="Handle Employee Complaints" textFill="#1673ec" />
         <Button layoutX="360.0" layoutY="194.0" mnemonicParsing="false" onAction="#GeneratingEmployeeReportsOnActionButton" prefHeight="26.0" prefWidth="186.0" text="Generating Employee Reports" textFill="#1673ec" />
         <Label layoutX="163.0" layoutY="20.0" prefHeight="27.0" prefWidth="262.0" style="-fx-font-size: 18px; -fx-font-weight: bold;" text="HR Manager" textFill="#10b7de" />
+      <Button layoutX="506.0" layoutY="344.0" mnemonicParsing="false" onAction="#LogOutOnActionButton" text="LogOut" textFill="#0682d4" />
     </children>
 </AnchorPane>

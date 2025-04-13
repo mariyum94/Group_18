@@ -6,6 +6,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class HRManager3 {
@@ -36,8 +37,8 @@ public class HRManager3 {
         leaveRequestTable.getItems().setAll(HRManagerModelClass2list);
     }
     @FXML
-    void ReturnHomeOnActionButton(ActionEvent event) {
-
+    void ReturnHomeOnActionButton(ActionEvent actionEvent) throws IOException {
+        SceneSwitcher.switchTo("HRManagerDashboard_View.fxml", actionEvent);
     }
 
     @FXML
