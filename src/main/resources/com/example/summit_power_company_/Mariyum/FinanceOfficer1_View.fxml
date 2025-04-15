@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="com.example.summit_power_company_.Mariyum.FinanceOfficer1">
+
+    <Label layoutX="155.0" layoutY="23.0" prefHeight="27.0" prefWidth="240.0" style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Generate Electricity Bills" textFill="#10b7de" />
+
+    <Label layoutX="75.0" layoutY="89.0" text="Customer ID:" />
+    <Button layoutX="390.0" layoutY="76.0" onAction="#FetchUsageOnActionButton" text="Fetch Usage" textFill="#1a97df" />
+
+    <Label layoutX="50.0" layoutY="130.0" text="Total Units Consumed:" />
+
+    <Label layoutX="71.0" layoutY="169.0" text="Previous Dues:" />
+
+    <Button layoutX="170.0" layoutY="222.0" onAction="#GenerateBill" text="Generate Bill" textFill="#12addc" />
+
+    <Label layoutX="50.0" layoutY="282.0" text="Total Amount Due:" />
+
+    <Button layoutX="223.0" layoutY="322.0" onAction="#SavePrintOnActionButton" text="Save Print" textFill="#188ac7" />
+    <Button layoutX="471.0" layoutY="348.0" onAction="#ReturnHomeOnActionButton" text="Return Home" textFill="#178bc9" />
+   <TextField fx:id="totalunitsconsumedTextField" layoutX="189.0" layoutY="126.0" />
+   <TextField fx:id="previousduesTextField" layoutX="189.0" layoutY="165.0" />
+   <TextField fx:id="CustomeridTextfield" layoutX="189.0" layoutY="85.0" />
+   <TextField layoutX="200.0" layoutY="278.0" />
+
+</AnchorPane>

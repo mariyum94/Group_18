@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.summit_power_company_.Mariyum.FinanceOfficer3">
+
+    <Label layoutX="51.0" layoutY="119.0" text="Select Employee:" textFill="#1f63d9" />
+    <ComboBox fx:id="selectemployeeComboBox" layoutX="179.0" layoutY="115.0" prefHeight="26.0" prefWidth="184.0" />
+
+
+    <Label layoutX="72.0" layoutY="181.0" text="Deductions:" />
+
+    <Label layoutX="80.0" layoutY="241.0" text="Bonuses:" />
+    <Button layoutX="197.0" layoutY="305.0" onAction="#CalculateSalaryOnActionButton" text="Calculate Salary" textFill="#1d85c7" />
+
+
+    <Label layoutX="64.0" layoutY="361.0" text="Final Salary:" />
+
+    <Button layoutX="194.0" layoutY="415.0" onAction="#ProcessPaymentOnActionButton" text="Process Payment" textFill="#146edc" />
+   <Label layoutX="180.0" layoutY="23.0" prefHeight="38.0" prefWidth="240.0" style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Manage Payroll  " textFill="#10b7de" />
+   <Button layoutX="485.0" layoutY="448.0" onAction="#ReturnHomeOnActionButton" text="Return Home" textFill="#178bc9" />
+   <TextField fx:id="FinalSalaryTextField" layoutX="179.0" layoutY="357.0" prefHeight="26.0" prefWidth="184.0" />
+   <TextField fx:id="deductionTextField" layoutX="170.0" layoutY="177.0" prefHeight="26.0" prefWidth="166.0" />
+   <TextField fx:id="BonusesTextField" layoutX="170.0" layoutY="236.0" prefHeight="26.0" prefWidth="166.0" />
+
+</AnchorPane>

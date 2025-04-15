@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.summit_power_company_.Mariyum.HRManagerDashboard">
+    <children>
+        <Button layoutX="87.0" layoutY="86.0" mnemonicParsing="false" onAction="#RegisterNewEmployeesOnActionButton" prefHeight="26.0" prefWidth="152.0" text="Register New Employees" textFill="#1673ec" />
+        <Button layoutX="87.0" layoutY="137.0" mnemonicParsing="false" onAction="#ManageAttendanceOnActionButton" prefHeight="26.0" prefWidth="152.0" text="Manage Attendance" textFill="#1673ec" />
+        <Button layoutX="89.0" layoutY="187.0" mnemonicParsing="false" onAction="#ApproveorDenyLeaveRequestsOnActionButton" prefHeight="26.0" prefWidth="178.0" text="Approve/Deny Leave Requests" textFill="#1673ec" />
+        <Button layoutX="89.0" layoutY="245.0" mnemonicParsing="false" onAction="#EvaluatePerformanceOnActionButton" prefHeight="26.0" prefWidth="152.0" text="Evaluate Performance" textFill="#1673ec" />
+        <Button layoutX="360.0" layoutY="86.0" mnemonicParsing="false" onAction="#ScheduleTrainingProgramsOnActionButton" prefHeight="26.0" prefWidth="172.0" text="Schedule Training Programs" textFill="#1673ec" />
+        <Button layoutX="360.0" layoutY="137.0" mnemonicParsing="false" onAction="#ProcessPromotionsTransfersOnActionButton" prefHeight="26.0" prefWidth="200.0" text="Process Promotions &amp; Transfers" textFill="#1673ec" />
+        <Button layoutX="360.0" layoutY="258.0" mnemonicParsing="false" onAction="#HandleEmployeeComplaintsOnActionButton" prefHeight="26.0" prefWidth="185.0" text="Handle Employee Complaints" textFill="#1673ec" />
+        <Button layoutX="360.0" layoutY="194.0" mnemonicParsing="false" onAction="#GeneratingEmployeeReportsOnActionButton" prefHeight="26.0" prefWidth="186.0" text="Generating Employee Reports" textFill="#1673ec" />
+        <Label layoutX="163.0" layoutY="20.0" prefHeight="27.0" prefWidth="262.0" style="-fx-font-size: 18px; -fx-font-weight: bold;" text="HR Manager" textFill="#10b7de" />
+      <Button layoutX="506.0" layoutY="344.0" mnemonicParsing="false" onAction="#LogOutOnActionButton" text="LogOut" textFill="#0682d4" />
+    </children>
+</AnchorPane>

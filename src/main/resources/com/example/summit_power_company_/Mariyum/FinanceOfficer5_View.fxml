@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="500.0" prefWidth="700.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="com.example.summit_power_company_.Mariyum.FinanceOfficer5">
+
+    <Label layoutX="250.0" layoutY="20.0" style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Budget Allocation" textFill="#0e9ed7" />
+
+    <Label layoutX="80.0" layoutY="80.0" text="Department Name:" />
+    <TextField fx:id="departmentTextField" layoutX="230.0" layoutY="75.0" prefWidth="300.0" />
+
+    <Label layoutX="80.0" layoutY="130.0" text="Allocation Amount:" />
+    <TextField fx:id="amountTextField" layoutX="230.0" layoutY="125.0" prefWidth="300.0" />
+
+    <Button layoutX="230.0" layoutY="180.0" onAction="#DistributeFundsOnActionButton" text="Distribute Funds" textFill="#1596d7" />
+
+    <TableView fx:id="allocationTable" layoutX="80.0" layoutY="240.0" prefHeight="180.0" prefWidth="540.0">
+        <columns>
+            <TableColumn fx:id="departmentColumn" prefWidth="196.00000762939453" text="Department" />
+            <TableColumn fx:id="amountColumn" prefWidth="343.9999084472656" text="Amount" />
+        </columns>
+    </TableView>
+   <Button layoutX="576.0" layoutY="452.0" onAction="#ReturnHomeOnActionButton" text="Return Home" textFill="#178bc9" />
+   <Button layoutX="389.0" layoutY="180.0" onAction="#exportPdfOnActionButton" text="Export as PDF" textFill="#1563bc" />
+</AnchorPane>

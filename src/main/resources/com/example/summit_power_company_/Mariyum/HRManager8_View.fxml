@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="482.0" prefWidth="647.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.summit_power_company_.Mariyum.HRManager8">
+
+    <!-- ComboBox to choose report type -->
+    <ComboBox fx:id="reportTypeComboBox" layoutX="228.0" layoutY="129.0" prefWidth="200" />
+
+    <!-- Generate Report Button -->
+    <Button layoutX="217.0" layoutY="378.0" onAction="#GenerateReportOnActionButton" text="Generate Report" textFill="#1b99e7" />
+
+    <!-- Export to PDF Button -->
+    <Button layoutX="225.0" layoutY="332.0" onAction="#ExporttoPDFOnActionButton" text="Export to PDF" textFill="#0e8ad7" />
+
+    <!-- TableView to display report data -->
+    <TableView fx:id="reportTableview" layoutX="21.0" layoutY="182.0" prefHeight="122.0" prefWidth="552.0">
+        <columns>
+            <TableColumn fx:id="Payrollcolumn" prefWidth="200" text="Payroll" />
+            <TableColumn fx:id="Attendancecolumn" prefWidth="200" text="Attendance" />
+            <TableColumn fx:id="Performancecolumn" prefWidth="152.800048828125" text="Performance" />
+        </columns>
+    </TableView>
+   <Label layoutX="81.0" layoutY="133.0" text="Select Report Type" />
+   <Label layoutX="173.0" layoutY="48.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Generating Employee Reports" textFill="#0a79d4" />
+   <Button layoutX="520.0" layoutY="421.0" onAction="#ReturnHomeOnActionButton" text="Return Home" textFill="#178bc9" />
+
+</AnchorPane>
