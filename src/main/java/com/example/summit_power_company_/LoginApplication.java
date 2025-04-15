@@ -12,8 +12,10 @@ import java.io.IOException;
 public class LoginApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Login.fxml"));
-        FXMLLoader fxmlLoader = new FXMLLoader(LoginApplication.class.getResource("/com/example/summit_power_company_/ReanaManagingDirector/ProductionManagerDeshboardScene.fxml"));
+       FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Login.fxml"));
+        //FXMLLoader fxmlLoader = new FXMLLoader(LoginApplication.class.getResource("/com/example/summit_power_company_/ReanaManagingDirector/ProductionManagerDeshboardScene.fxml"));
+        //FXMLLoader fxmlLoader = new FXMLLoader(LoginApplication.class.getResource("/com/example/summit_power_company_/Mariyum/FinanceOfficerDashboard_View.fxml"));
+
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Summit Power Company");
         stage.setScene(scene);
