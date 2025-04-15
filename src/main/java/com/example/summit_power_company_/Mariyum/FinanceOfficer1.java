@@ -35,19 +35,20 @@ public class FinanceOfficer1 {
 
     @FXML
     void SavePrintOnActionButton(ActionEvent event) {
-        try (
-                ObjectOutputStream outputStream = new ObjectOutputStream(
-                        new FileOutputStream("data.bin")
-                );
-        ){
-            outputStream.writeObject(userList.getFirst());
-            messageLabel.setText("Successfully saved to file.");
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-            messageLabel.setText("Could not write to file");
-        }
-    }
-    }
+//        try (
+//                ObjectOutputStream outputStream = new ObjectOutputStream(
+//                        new FileOutputStream("data.bin")
+//                );
+//        ){
+//            outputStream.writeObject(userList.getFirst());
+//            messageLabel.setText("Successfully saved to file.");
+//        }
+//        catch (IOException e) {
+//            e.printStackTrace();
+//            messageLabel.setText("Could not write to file");
+//        }
+//    }
+//    }
 
+    }
 }
