@@ -15,14 +15,16 @@ public class HRManager7 {
     private Label statusLabel;
 
     @FXML
-    public void initialize() {
-        complaintComboBox.getItems().addAll(
-                "Billing Error",
-                "Service Interruption",
-                "Incorrect Meter Reading",
-                "Late Technician Visit",
-                "Other"
-        );
+
+        public void initialize() {
+            complaintComboBox.getItems().addAll(
+                    "Billing Error",
+                    "Service Interruption",
+                    "Incorrect Meter Reading",
+                    "Late Technician Visit",
+                    "Other"
+            );
+
 
     }
     @FXML
