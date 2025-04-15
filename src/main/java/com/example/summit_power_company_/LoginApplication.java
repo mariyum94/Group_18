@@ -1,16 +1,18 @@
 package com.example.summit_power_company_;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HelloApplication extends Application {
+
+
+public class LoginApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/example/summit_power_company_/ReanaManagingDirector/ManagingDirectorDeshboard.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(LoginApplication.class.getResource("/com/example/summit_power_company_/ReanaManagingDirector/ProductionManagerDeshboardScene.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Summit Power Company");
         stage.setScene(scene);
