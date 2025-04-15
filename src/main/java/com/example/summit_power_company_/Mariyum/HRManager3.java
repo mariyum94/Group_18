@@ -34,7 +34,7 @@ public class HRManager3 {
         HRManagerModelClass2list.add(new HRManagerModelClass2("Ali", "Sick Leave", "Pending"));
         HRManagerModelClass2list.add(new HRManagerModelClass2("Sara", "Casual Leave", "Pending"));
 
-        leaveRequestTable.getItems().setAll(HRManagerModelClass2list);
+        leaveRequestTable.getItems().addAll(HRManagerModelClass2list);
     }
     @FXML
     void ReturnHomeOnActionButton(ActionEvent actionEvent) throws IOException {

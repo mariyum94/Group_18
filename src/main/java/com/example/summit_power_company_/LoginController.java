@@ -1,34 +1,51 @@
 package com.example.summit_power_company_;
 
-import com.example.summit_power_company_.Mariyum.SceneSwitcher;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
-
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class LoginController {
+
     @FXML
-    private PasswordField passwordTextField;
+    private Label massageLabel;
     @FXML
-    private Label errorLabel;
+    private TextField passwordTextField;
     @FXML
     private TextField usernameTextField;
 
     @FXML
-    public void initialize() {
-    }
-
-    @FXML
-    public void login(ActionEvent actionEvent) throws IOException {
+    public void Login(ActionEvent actionEvent) throws IOException {
         String username = usernameTextField.getText();
         String password = passwordTextField.getText();
-        if ("mariyum".equals(username) && "mariyum123".equals(password)) {
-            errorLabel.setText("Log in successful");
-            SceneSwitcher.switchTo("com.example.summit_power_company_.Mariyum.FinanceOfficerDashboard");
+
+        if (" FinanceOfficer".equals(username) && "Mariyum".equals(password)) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Mariyum/FinanceOfficerDashboard_View.fxml"));
+            Parent root = loader.load();
+            Stage stage = (Stage) usernameTextField.getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } else if ("HR Manager".equals(username) && "Mariyum".equals(password)) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Mariyum/HRManagerDashboard_View.fxml"));
+            Parent root = loader.load();
+            Stage stage = (Stage) usernameTextField.getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } else if (" user".equals(username) && "Reana".equals(password)) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("reana/Dashboard.fxml"));
+            Parent root = loader.load();
+            Stage stage = (Stage) usernameTextField.getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
         } else {
-            errorLabel.setText("Incorrect username or password");
+            massageLabel.setText("Incorrect username or password. Please try again.");
         }
     }
 }

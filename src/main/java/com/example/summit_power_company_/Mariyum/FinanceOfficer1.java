@@ -2,14 +2,10 @@ package com.example.summit_power_company_.Mariyum;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
-
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 
 public class FinanceOfficer1 {
 
@@ -39,7 +35,20 @@ public class FinanceOfficer1 {
 
     @FXML
     void SavePrintOnActionButton(ActionEvent event) {
+//        try (
+//                ObjectOutputStream outputStream = new ObjectOutputStream(
+//                        new FileOutputStream("data.bin")
+//                );
+//        ){
+//            outputStream.writeObject(userList.getFirst());
+//            messageLabel.setText("Successfully saved to file.");
+//        }
+//        catch (IOException e) {
+//            e.printStackTrace();
+//            messageLabel.setText("Could not write to file");
+//        }
+//    }
+//    }
 
     }
-
 }
