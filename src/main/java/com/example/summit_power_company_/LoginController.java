@@ -15,20 +15,21 @@ import java.io.IOException;
 public class LoginController {
 
     @FXML
-    private Label massageLabel;
-    @FXML
-    private TextField passwordTextField;
-    @FXML
     private TextField usernameTextField;
 
+    @FXML
+    private PasswordField passwordTextField;
+    @FXML
+    private Label errorLabel;
+    @FXML
     private final String FinanceOfficerID = "Admin1234";
     private final String FinanceOfficerpassword = "1234";
     private final String HRManagerID = "Admin1234";
     private final String HRManagerpassword = "1234";
 //others user password
 
-    @FXML
-    public void Login(ActionEvent actionEvent) throws IOException {
+    @Deprecated
+    public void LoginOnActionButton(ActionEvent actionEvent) throws IOException {
         String username = usernameTextField.getText().trim();
         String password = passwordTextField.getText().trim();
 
@@ -44,6 +45,7 @@ public class LoginController {
             Stage stage = (Stage) usernameTextField.getScene().getWindow();
             stage.setScene(new Scene(root));
             stage.show();
+
             //others path
 //        } else if (username.equals(HRManagerID) && password.equals(HRManagerpassword)) {
 //            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/summit_power_company_/Reana/Dashboard_View.fxml"));
@@ -52,7 +54,8 @@ public class LoginController {
 //            stage.setScene(new Scene(root));
 //            stage.show();
         } else {
-            massageLabel.setText("Incorrect username or password. Please try again.");
+            errorLabel.setText("Incorrect username or password. Please try again.");
         }
     }
+
 }

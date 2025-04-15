@@ -17,6 +17,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class FinanceOfficer8 {
@@ -48,7 +49,7 @@ public class FinanceOfficer8 {
     @FXML
     private TableColumn<FinanceOfficerModelClass4, String> statusColumn;
 
-    ArrayList<FinanceOfficerModelClass4> FinanceOfficerModelClass4list= new ArrayList<>();
+    ArrayList<FinanceOfficerModelClass4> FinanceOfficerModelClass4list = new ArrayList<>();
 
     @FXML
     public void initialize() {
@@ -58,10 +59,23 @@ public class FinanceOfficer8 {
         dueDateColumn.setCellValueFactory(new PropertyValueFactory<>("Due Date"));
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("Status"));
     }
+
     @FXML
     void FilterOnActionButton(ActionEvent event) {
-
+        LocalDate selectedDate = filterdatePicker.getValue();
+        if (selectedDate != null) {
+            for (FinanceOfficerModelClass4 item : FinanceOfficerModelClass4list) {
+                if (selectedDate.equals(item.getDueDate())) {
+                    FinanceOfficerModelClass4list.add(item);
+                }
+            }
+            Statusmessage.setText("Filtered by date: " + selectedDate);
+        } else {
+            Statusmessage.setText("Please select a date to filter.");
+        }
     }
+
+
 
     @FXML
     void ReturnHomeOnActionButton(ActionEvent actionEvent) throws IOException {
@@ -70,14 +84,13 @@ public class FinanceOfficer8 {
 
     @FXML
     void SendReminderOnActionButton(ActionEvent event) {
-
-    }
-
-    public Label getStatusmessage() {
-        return Statusmessage;
-    }
-
-    public void setStatusmessage(Label statusmessage) {
-        Statusmessage = statusmessage;
+        FinanceOfficerModelClass4 selected = billingTable.getSelectionModel().getSelectedItem();
+        if (selected != null) {
+            Statusmessage.setText("Reminder sent to: " + selected.getCustomer());
+        } else {
+            Statusmessage.setText("Please select a row to send reminder.");
+        }
     }
 }
+
+
