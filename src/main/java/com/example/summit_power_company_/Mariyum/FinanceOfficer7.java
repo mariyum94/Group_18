@@ -2,6 +2,9 @@ package com.example.summit_power_company_.Mariyum;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
@@ -54,7 +57,35 @@ public class FinanceOfficer7 {
     }
     @FXML
     void AddDataOnActionButton(ActionEvent event) {
+        String Budget = BudgetTextField.getText();
+        String amount = amountTextField.getText();
+        String date = dateTextField.getValue();
 
+        if (Budget.isBlank() || amount.isBlank() || date  == null) {
+            StatusLabel.setText("Please provide all inputs");
+            return;
+        }
+//        if (password.length() < 8) {
+//            messageLabel.setText("Password must be at least 8 characters long!");
+//            return;
+//        }
+
+        for(FinanceOfficerModelClass3 u : FinanceOfficerModelClass3list) {
+            if (u.getUsername().equals(username)) {
+                StatusLabel.setText("This username is not available!");
+                return;
+            }
+        }
+
+        FinanceOfficerModelClass3 user  = new User(username, password, userType);
+        userList.add(user);
+        tableView.getItems().add(user);
+        StatusLabel.setText("User added successfully");
+//        System.out.println("Currently " + userList.size() + " users in the list");
+
+        usernameTF.setText("");
+        passwordTF.setText("");
+        userTypeCB.setValue(null);
     }
 
     @FXML
@@ -64,6 +95,21 @@ public class FinanceOfficer7 {
 
     @FXML
     void EditDataOnActionButton(ActionEvent event) {
+        FinanceOfficerModelClass3 user = tableView.getSelectionModel().getSelectedItem();
+        if (user != null) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("edit-user.fxml"));
+            Parent root = loader.load();
+
+            EditUserController controller = loader.getController();
+            controller.setUser(user);
+
+            Stage stage = (Stage)  StatusLabel.getScene().getWindow();
+            stage.setScene(new Scene(root));
+        }
+    }
+
+    public void setMessage(String message) {
+        StatusLabel.setText(message);
 
     }
 
