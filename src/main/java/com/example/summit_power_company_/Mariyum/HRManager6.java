@@ -1,6 +1,7 @@
 package com.example.summit_power_company_.Mariyum;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 
 import java.io.IOException;
@@ -26,6 +27,12 @@ public class HRManager6 {
     @FXML
     void comfirmpromotionOnActionButton(ActionEvent event) {
 
+    }
+    private void showAlert(String title, String content) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(title);
+        alert.setContentText(content);
+        alert.show();
     }
 
 }

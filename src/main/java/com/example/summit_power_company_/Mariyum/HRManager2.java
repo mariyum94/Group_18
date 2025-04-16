@@ -2,10 +2,7 @@ package com.example.summit_power_company_.Mariyum;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.IOException;
@@ -51,6 +48,12 @@ public class HRManager2 {
     @FXML
     void handleApproveLeave(ActionEvent event) {
 
+    }
+    private void showAlert(String title, String content) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(title);
+        alert.setContentText(content);
+        alert.show();
     }
 
 }
