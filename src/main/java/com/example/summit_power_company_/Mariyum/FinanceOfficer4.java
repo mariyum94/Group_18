@@ -34,11 +34,26 @@ public class FinanceOfficer4 {
 
     @FXML
     public void viewReportOnActionButton(ActionEvent actionEvent) {
-    }
+        try {
+            double revenue = Double.parseDouble(RevenueTextField.getText());
+            double expenses = Double.parseDouble(ExpensesTextField.getText());
+            double result = revenue - expenses;
 
+            ProfitorlossTextField.setText(String.valueOf(result));
+        } catch (NumberFormatException e) {
+            showAlert("Error", "Invalid input in revenue or expenses.");
+        }
+    }
     @FXML
     public void exportPdfOnActionButton(ActionEvent actionEvent) {
-        System.out.println("Exporting report to PDF...");
+        String profitLoss = ProfitorlossTextField.getText();
+        if (profitLoss.isEmpty()) {
+            showAlert("Export Error", "Please generate the report first.");
+        } else {
+            // Simulate export
+            System.out.println("Exporting report to PDF...");
+            showAlert("Export", "Report exported as PDF (simulated).");
+        }
     }
 
     @FXML
