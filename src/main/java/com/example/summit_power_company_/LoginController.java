@@ -24,7 +24,7 @@ public class LoginController {
     @FXML
     private final String FinanceOfficerID = "Admin1234";
     private final String FinanceOfficerpassword = "1234";
-    private final String HRManagerID = "Admin1234";
+    private final String HRManagerID = "Admin12345";
     private final String HRManagerpassword = "1234";
 //others user password
 

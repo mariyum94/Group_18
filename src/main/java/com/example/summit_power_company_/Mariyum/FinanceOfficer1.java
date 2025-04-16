@@ -21,8 +21,17 @@ public class FinanceOfficer1 {
 
     @FXML
     void FetchUsageOnActionButton(ActionEvent event) {
-
+        String customerId = CustomeridTextfield.getText();
+        // Simulated data fetch
+        if (!customerId.isEmpty()) {
+            previousduesTextField.setText("150.50");
+            totalunitsconsumedTextField.setText("120");
+            showAlert("Usage Fetched", "Fetched usage for Customer ID: " + customerId);
+        } else {
+            showAlert("Error", "Please enter a Customer ID.");
+        }
     }
+
 
     @FXML
     void GenerateBill(ActionEvent event) {
@@ -44,25 +53,24 @@ public class FinanceOfficer1 {
 
     @FXML
     void SavePrintOnActionButton(ActionEvent event) {
-//        try {
-//            String customerId = CustomeridTextfield.getText();
-//            double dues = Double.parseDouble(previousduesTextField.getText());
-//            int units = Integer.parseInt(totalunitsconsumedTextField.getText());
-//             double unitRate = 10.0;
-//
-//            double total = dues + (units * unitRate);
-//
-//            CustomerBill bill = new CustomerBill(customerId, dues, units, total);
-//
-//            try (ObjectOutputStream outputStream = new ObjectOutputStream(
-//                    new FileOutputStream("bill_" + customerId + ".bin"))) {
-//                outputStream.writeObject(bill);
-//                showAlert("Saved", "Bill saved successfully for customer: " + customerId);
-//            }
-//        } catch (IOException | NumberFormatException e) {
-//            showAlert("Error", "Failed to save bill. Check input fields.");
-//            e.printStackTrace();
-//        }
+        try {
+            String customerId = CustomeridTextfield.getText();
+            double dues = Double.parseDouble(previousduesTextField.getText());
+            int units = Integer.parseInt(totalunitsconsumedTextField.getText());
+            double unitRate = 10.0;
+            double total = dues + (units * unitRate);
+
+            // Save to file using object output string
+            try (FileOutputStream fileOut = new FileOutputStream("bill_" + customerId + ".txt");
+                 ObjectOutputStream out = new ObjectOutputStream(fileOut)) {
+                out.writeObject("Customer ID: " + customerId + "\nTotal Bill: " + total);
+            }
+
+            showAlert("Saved", "Bill saved as bill_" + customerId + ".txt");
+
+        } catch (IOException | NumberFormatException e) {
+            showAlert("Error", "Failed to save. Check input values.");
+        }
     }
 
     private void showAlert(String title, String content) {
