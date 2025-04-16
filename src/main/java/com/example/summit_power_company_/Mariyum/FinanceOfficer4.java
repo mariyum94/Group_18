@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -43,5 +44,11 @@ public class FinanceOfficer4 {
     @FXML
     void ReturnHomeOnActionButton(ActionEvent actionEvent) throws IOException {
         SceneSwitcher.switchTo("FinanceOfficerDashboard_View.fxml", actionEvent);
+    }
+    private void showAlert(String title, String content) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(title);
+        alert.setContentText(content);
+        alert.show();
     }
 }

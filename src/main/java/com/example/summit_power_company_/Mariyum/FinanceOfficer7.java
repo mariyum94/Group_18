@@ -124,7 +124,9 @@ public class FinanceOfficer7 {
         SceneSwitcher.switchTo("FinanceOfficerDashboard_View.fxml", actionEvent);
     }
 
-    public void setMessage(String message) {
-        StatusLabel.setText(message);
-    }
-}
+    private void showAlert(String title, String content) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(title);
+        alert.setContentText(content);
+        alert.show();
+    }}
