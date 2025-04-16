@@ -44,4 +44,5 @@ public class FinanceOfficer2 {
     void ReturnHomeOnActionButton(ActionEvent actionEvent) throws IOException {
         SceneSwitcher.switchTo("FinanceOfficerDashboard_View.fxml", actionEvent);
     }
+
 }
