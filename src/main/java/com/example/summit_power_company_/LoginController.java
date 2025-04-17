@@ -26,6 +26,10 @@ public class LoginController {
     private final String FinanceOfficerpassword = "1234";
     private final String HRManagerID = "Admin12345";
     private final String HRManagerpassword = "1234";
+    private final String ManagingDirectorID = "reana";
+    private final String ManagingDirectorpassword = "1234";
+    private final String ProductionManagerID = "reana1";
+    private final String ProductionManagerpassword = "1234";
 //others user password
 
     @Deprecated
@@ -46,13 +50,20 @@ public class LoginController {
             stage.setScene(new Scene(root));
             stage.show();
 
+        } else if (username.equals(ManagingDirectorID) && password.equals(ManagingDirectorpassword)) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/summit_power_company_/ReanaManagingDirector/ManagingDirectorDeshboard.fxml"));
+            Parent root = loader.load();
+            Stage stage = (Stage) usernameTextField.getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } else if (username.equals(ProductionManagerID) && password.equals(ProductionManagerpassword)) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/summit_power_company_/ReanaManagingDirector/ProductionManagerDeshboardScene.fxml"));
+            Parent root = loader.load();
+            Stage stage = (Stage) usernameTextField.getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+
             //others path
-//        } else if (username.equals(HRManagerID) && password.equals(HRManagerpassword)) {
-//            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/summit_power_company_/Reana/Dashboard_View.fxml"));
-//            Parent root = loader.load();
-//            Stage stage = (Stage) usernameTextField.getScene().getWindow();
-//            stage.setScene(new Scene(root));
-//            stage.show();
         } else {
             errorLabel.setText("Incorrect username or password. Please try again.");
         }

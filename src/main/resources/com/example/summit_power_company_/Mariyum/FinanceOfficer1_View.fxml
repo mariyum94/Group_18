@@ -16,7 +16,7 @@
 
     <Label layoutX="71.0" layoutY="169.0" text="Previous Dues:" />
 
-    <Button layoutX="170.0" layoutY="222.0" onAction="#GenerateBill" text="Generate Bill" textFill="#12addc" />
+    <Button layoutX="170.0" layoutY="222.0" onAction="#GenerateBilltOnActionButton" text="Generate Bill" textFill="#12addc" />
 
     <Label layoutX="50.0" layoutY="282.0" text="Total Amount Due:" />
 
