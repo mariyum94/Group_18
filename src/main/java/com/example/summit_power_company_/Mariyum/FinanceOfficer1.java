@@ -22,7 +22,7 @@ public class FinanceOfficer1 {
     @FXML
     void FetchUsageOnActionButton(ActionEvent event) {
         String customerId = CustomeridTextfield.getText();
-        // Simulated data fetch
+        //  data fetch
         if (!customerId.isEmpty()) {
             previousduesTextField.setText("150.50");
             totalunitsconsumedTextField.setText("120");
@@ -34,7 +34,7 @@ public class FinanceOfficer1 {
 
 
     @FXML
-    void GenerateBill(ActionEvent event) {
+    void GenerateBilltOnActionButton(ActionEvent event) {
         try {
             double dues = Double.parseDouble(previousduesTextField.getText());
             int units = Integer.parseInt(totalunitsconsumedTextField.getText());

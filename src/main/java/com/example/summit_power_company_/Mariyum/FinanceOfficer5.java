@@ -33,12 +33,13 @@ public class FinanceOfficer5 {
     @FXML
     private TextField amountTextField;
 
-    ArrayList<FinanceOfficerModelClass1> FinanceOfficerModelClass1list= new ArrayList<>();
+    ArrayList<FinanceOfficerModelClass1> FinanceOfficerModelClass1list= new ArrayList<FinanceOfficerModelClass1>();
 
     @FXML
     public void initialize() {
         departmentColumn.setCellValueFactory(new PropertyValueFactory<>("departmentName"));
         amountColumn.setCellValueFactory(new PropertyValueFactory<>("allocationAmount"));
+       // allocationTable.getItems().addAll(FinanceOfficerModelClass1list);
 
     }
 
