@@ -7,7 +7,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 
 public class HRManager1 {
 
@@ -27,9 +29,6 @@ public class HRManager1 {
     private TextField salaryTextField;
 
     @FXML
-    private Button saveButton;
-
-    @FXML
     private Label statusLabel;
 
     @FXML
@@ -39,7 +38,6 @@ public class HRManager1 {
 
     @FXML
     void SaveEmployeeOnActionButton(ActionEvent event) {
-
     }
     private void showAlert(String title, String content) {
         Alert alert = new Alert(Alert.AlertType.ERROR);

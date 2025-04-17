@@ -26,7 +26,7 @@ public class HRManager8 {
     private TableView<HRManagerModelClass4> reportTableview;
 
     @FXML
-    private ComboBox<?> reportTypeComboBox;
+    private ComboBox<String> reportTypeComboBox;
 
     ArrayList<HRManagerModelClass4> HRManagerModelClass4list= new ArrayList<>();
 

@@ -49,13 +49,13 @@ public class LoginController {
             stage.setScene(new Scene(root));
             stage.show();
 
-            //others path
         } else if (username.equals(reana) && password.equals(reanapassword)) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/summit_power_company_/ReanaManagingDirector/Users.fxml"));
            Parent root = loader.load();
            Stage stage = (Stage) usernameTextField.getScene().getWindow();
            stage.setScene(new Scene(root));
             stage.show();
+            //others path
         } else {
             errorLabel.setText("Incorrect username or password. Please try again.");
         }
