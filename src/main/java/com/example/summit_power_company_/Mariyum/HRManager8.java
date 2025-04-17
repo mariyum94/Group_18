@@ -28,13 +28,14 @@ public class HRManager8 {
     @FXML
     private ComboBox<String> reportTypeComboBox;
 
-    ArrayList<HRManagerModelClass4> HRManagerModelClass4list= new ArrayList<>();
+    static ArrayList<HRManagerModelClass4> HRManagerModelClass4list= new ArrayList<>();
 
     @FXML
     public void initialize() {
         Payrollcolumn.setCellValueFactory(new PropertyValueFactory<>(" Payroll"));
         Performancecolumn.setCellValueFactory(new PropertyValueFactory<>("Performance"));
         Attendancecolumn.setCellValueFactory(new PropertyValueFactory<>("Attendance"));
+        reportTableview.getItems().addAll(HRManagerModelClass4list);
         }
 
     @FXML

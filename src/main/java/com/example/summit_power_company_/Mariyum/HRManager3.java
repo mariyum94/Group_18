@@ -24,7 +24,7 @@ public class HRManager3 {
     @FXML
     private TableColumn<HRManagerModelClass2, String> statusColumn;
 
-    ArrayList<HRManagerModelClass2> HRManagerModelClass2list= new ArrayList<>();
+    static ArrayList<HRManagerModelClass2> HRManagerModelClass2list= new ArrayList<>();
 
     @FXML
     public void initialize() {
@@ -32,6 +32,7 @@ public class HRManager3 {
         employeeColumn.setCellValueFactory(new PropertyValueFactory<>("employee"));
         leaveTypeColumn.setCellValueFactory(new PropertyValueFactory<>("leave"));
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("Status"));
+
         HRManagerModelClass2list.add(new HRManagerModelClass2("Ali", "Sick Leave", "Pending"));
         HRManagerModelClass2list.add(new HRManagerModelClass2("Sara", "Casual Leave", "Pending"));
 

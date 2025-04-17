@@ -28,7 +28,7 @@ public class HRManager2 {
     @FXML
     private Label statusLabel;
 
-    ArrayList<HRManagerModelClass1> HRManagerModelClass1list= new ArrayList<>();
+    static ArrayList<HRManagerModelClass1> HRManagerModelClass1list= new ArrayList<>();
 
     @FXML
     public void initialize() {
@@ -38,6 +38,8 @@ public class HRManager2 {
         attendancecolumn.setCellValueFactory(new PropertyValueFactory<>("Attendance"));
         dateColumn.setCellValueFactory(new PropertyValueFactory<>("Date"));
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("Status"));
+
+        attendanceTable.getItems().addAll(HRManagerModelClass1list);
     }
 
     @FXML
