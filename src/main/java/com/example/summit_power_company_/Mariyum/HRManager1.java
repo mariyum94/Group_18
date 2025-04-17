@@ -38,6 +38,7 @@ public class HRManager1 {
 
     @FXML
     void SaveEmployeeOnActionButton(ActionEvent event) {
+
     }
     private void showAlert(String title, String content) {
         Alert alert = new Alert(Alert.AlertType.ERROR);

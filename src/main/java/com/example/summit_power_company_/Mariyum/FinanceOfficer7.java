@@ -45,9 +45,7 @@ public class FinanceOfficer7 {
     @FXML
     private Label StatusLabel;
 
-    public static FinanceOfficerModelClass3 FinanceOfficerModelClass3ToEdit = null;
-
-    ArrayList<FinanceOfficerModelClass3> financeDataList = new ArrayList<>();
+    static ArrayList<FinanceOfficerModelClass3> FinanceOfficerModelClass3List = new ArrayList<>();
 
     @FXML
     public void initialize() {
@@ -57,6 +55,8 @@ public class FinanceOfficer7 {
         budgetColumn.setCellValueFactory(new PropertyValueFactory<>("budget"));
 
         CategoryTypeComboBox.getItems().addAll("Monthly", "Daily");
+
+        financialDataTableView.getItems().addAll(FinanceOfficerModelClass3List);
     }
 
     @FXML
@@ -75,9 +75,7 @@ public class FinanceOfficer7 {
             try {
                 double budget = Double.parseDouble(budgetStr);
                 int amount = Integer.parseInt(amountStr);
-
-                // Check if this entry already exists (optional)
-                for (FinanceOfficerModelClass3 record : financeDataList) {
+                for (FinanceOfficerModelClass3 record : FinanceOfficerModelClass3List) {
                     if (record.getDate().equals(date.toString()) && record.getCategory().equals(category)) {
                         StatusLabel.setText("This record already exists!");
                         return;
@@ -85,7 +83,7 @@ public class FinanceOfficer7 {
                 }
 
                 FinanceOfficerModelClass3 record = new FinanceOfficerModelClass3(date.toString(), amount, category, budget);
-                financeDataList.add(record);
+                FinanceOfficerModelClass3List.add(record);
                 financialDataTableView.getItems().add(record);
 
                 StatusLabel.setText("Record added successfully");
@@ -120,7 +118,6 @@ public class FinanceOfficer7 {
             stage.setScene(new Scene(root));
         }
     }
-
     private void setFinanceOfficerModelClass3(FinanceOfficerModelClass3 record) {
     }
 

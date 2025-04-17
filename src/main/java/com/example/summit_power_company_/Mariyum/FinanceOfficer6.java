@@ -33,7 +33,7 @@ public class FinanceOfficer6 {
     @FXML
     private ComboBox<String> CategoryTypeComboBox;
 
-    ArrayList<FinanceOfficerModelClass2> FinanceOfficerModelClass2list= new ArrayList<>();
+    static ArrayList<FinanceOfficerModelClass2> FinanceOfficerModelClass2list= new ArrayList<>();
 
     @FXML
     public void initialize() {
@@ -42,6 +42,8 @@ public class FinanceOfficer6 {
         CategoryColumn.setCellValueFactory(new PropertyValueFactory<>("Category"));
 
         CategoryTypeComboBox.getItems().addAll("Monthly", "Daily");
+
+        expensesTableView.getItems().addAll(FinanceOfficerModelClass2list);
 }
 
 

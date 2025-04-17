@@ -34,6 +34,7 @@ public class FinanceOfficer5 {
     public void initialize() {
         departmentColumn.setCellValueFactory(new PropertyValueFactory<>("departmentName"));
         amountColumn.setCellValueFactory(new PropertyValueFactory<>("allocationAmount"));
+        allocationTable.getItems().addAll(FinanceOfficerModelClass1list);
     }
 
     @FXML
