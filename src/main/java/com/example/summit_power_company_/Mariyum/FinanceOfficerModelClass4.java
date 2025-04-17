@@ -3,26 +3,26 @@ package com.example.summit_power_company_.Mariyum;
 import java.io.Serializable;
 
 public class FinanceOfficerModelClass4 implements Serializable {
-    private String customerName;
+    private String customer;
     private String invoiceId;
-    private String dueDate;
     private double amount;
+    private int dueDate;
     private String status;
 
-    public FinanceOfficerModelClass4(String customerName, String invoiceId, String dueDate, double amount, String status) {
-        this.customerName = customerName;
+    public FinanceOfficerModelClass4(String customer, String invoiceId, double amount, int dueDate, String status) {
+        this.customer = customer;
         this.invoiceId = invoiceId;
-        this.dueDate = dueDate;
         this.amount = amount;
+        this.dueDate = dueDate;
         this.status = status;
     }
 
-    public String getCustomerName() {
-        return customerName;
+    public String getCustomer() {
+        return customer;
     }
 
-    public void setCustomerName(String customerName) {
-        this.customerName = customerName;
+    public void setCustomer(String customer) {
+        this.customer = customer;
     }
 
     public String getInvoiceId() {
@@ -33,20 +33,20 @@ public class FinanceOfficerModelClass4 implements Serializable {
         this.invoiceId = invoiceId;
     }
 
-    public String getDueDate() {
-        return dueDate;
-    }
-
-    public void setDueDate(String dueDate) {
-        this.dueDate = dueDate;
-    }
-
     public double getAmount() {
         return amount;
     }
 
     public void setAmount(double amount) {
         this.amount = amount;
+    }
+
+    public int getDueDate() {
+        return dueDate;
+    }
+
+    public void setDueDate(int dueDate) {
+        this.dueDate = dueDate;
     }
 
     public String getStatus() {
@@ -59,11 +59,11 @@ public class FinanceOfficerModelClass4 implements Serializable {
 
     @Override
     public String toString() {
-        return "FinanceOfficerModelClass8{" +
-                "customerName='" + customerName + '\'' +
+        return "FinanceOfficerModelClass4{" +
+                "customer='" + customer + '\'' +
                 ", invoiceId='" + invoiceId + '\'' +
-                ", dueDate='" + dueDate + '\'' +
                 ", amount=" + amount +
+                ", dueDate=" + dueDate +
                 ", status='" + status + '\'' +
                 '}';
     }

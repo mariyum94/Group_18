@@ -2,6 +2,7 @@ package com.example.summit_power_company_.Mariyum;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -49,6 +50,12 @@ public class HRManager3 {
     @FXML
     void denyleaveOnActionButton(ActionEvent event) {
 
+    }
+    private void showAlert(String title, String content) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(title);
+        alert.setContentText(content);
+        alert.show();
     }
 
 }

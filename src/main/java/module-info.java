@@ -1,6 +1,7 @@
 module com.example.summit_power_company_ {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.desktop;
 
     opens com.example.summit_power_company_ to javafx.fxml;
     opens com.example.summit_power_company_.Mariyum to javafx.fxml;

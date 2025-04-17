@@ -1,34 +1,61 @@
 package com.example.summit_power_company_;
 
-import com.example.summit_power_company_.Mariyum.SceneSwitcher;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
-
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class LoginController {
+
+    @FXML
+    private TextField usernameTextField;
+
     @FXML
     private PasswordField passwordTextField;
     @FXML
     private Label errorLabel;
     @FXML
-    private TextField usernameTextField;
+    private final String FinanceOfficerID = "Admin1234";
+    private final String FinanceOfficerpassword = "1234";
+    private final String HRManagerID = "Admin12345";
+    private final String HRManagerpassword = "1234";
+//others user password
 
-    @FXML
-    public void initialize() {
-    }
+    @Deprecated
+    public void LoginOnActionButton(ActionEvent actionEvent) throws IOException {
+        String username = usernameTextField.getText().trim();
+        String password = passwordTextField.getText().trim();
 
-    @FXML
-    public void login(ActionEvent actionEvent) throws IOException {
-        String username = usernameTextField.getText();
-        String password = passwordTextField.getText();
-        if ("mariyum".equals(username) && "mariyum123".equals(password)) {
-            errorLabel.setText("Log in successful");
-            SceneSwitcher.switchTo("com.example.summit_power_company_.Mariyum.FinanceOfficerDashboard");
+        if (username.equals(FinanceOfficerID) && password.equals(FinanceOfficerpassword)) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/summit_power_company_/Mariyum/FinanceOfficerDashboard_View.fxml"));
+            Parent root = loader.load();
+            Stage stage = (Stage) usernameTextField.getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } else if (username.equals(HRManagerID) && password.equals(HRManagerpassword)) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/summit_power_company_/Mariyum/FinanceOfficerDashboard_View.fxml"));
+            Parent root = loader.load();
+            Stage stage = (Stage) usernameTextField.getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+
+            //others path
+//        } else if (username.equals(HRManagerID) && password.equals(HRManagerpassword)) {
+//            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/summit_power_company_/Reana/Dashboard_View.fxml"));
+//            Parent root = loader.load();
+//            Stage stage = (Stage) usernameTextField.getScene().getWindow();
+//            stage.setScene(new Scene(root));
+//            stage.show();
         } else {
-            errorLabel.setText("Incorrect username or password");
+            errorLabel.setText("Incorrect username or password. Please try again.");
         }
     }
+
 }

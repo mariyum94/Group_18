@@ -2,6 +2,7 @@ package com.example.summit_power_company_.Mariyum;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -50,6 +51,11 @@ public class HRManager8 {
     void ReturnHomeOnActionButton(ActionEvent actionEvent) throws IOException {
         SceneSwitcher.switchTo("HRManagerDashboard_View.fxml", actionEvent);
     }
-
+    private void showAlert(String title, String content) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(title);
+        alert.setContentText(content);
+        alert.show();
+    }
 
 }

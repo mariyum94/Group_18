@@ -2,6 +2,7 @@ package com.example.summit_power_company_.Mariyum;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -20,12 +21,29 @@ public class FinanceOfficer1 {
 
     @FXML
     void FetchUsageOnActionButton(ActionEvent event) {
-
+        String customerId = CustomeridTextfield.getText();
+        // Simulated data fetch
+        if (!customerId.isEmpty()) {
+            previousduesTextField.setText("150.50");
+            totalunitsconsumedTextField.setText("120");
+            showAlert("Usage Fetched", "Fetched usage for Customer ID: " + customerId);
+        } else {
+            showAlert("Error", "Please enter a Customer ID.");
+        }
     }
+
 
     @FXML
     void GenerateBill(ActionEvent event) {
-
+        try {
+            double dues = Double.parseDouble(previousduesTextField.getText());
+            int units = Integer.parseInt(totalunitsconsumedTextField.getText());
+            double unitRate = 10.0;
+            double total = dues + (units * unitRate);
+            showAlert("Bill Generated", "Total Bill: " + total);
+        } catch (NumberFormatException e) {
+            showAlert("Error", "Please enter valid numbers for dues and units.");
+        }
     }
 
     @FXML
@@ -35,19 +53,30 @@ public class FinanceOfficer1 {
 
     @FXML
     void SavePrintOnActionButton(ActionEvent event) {
-        try (
-                ObjectOutputStream outputStream = new ObjectOutputStream(
-                        new FileOutputStream("data.bin")
-                );
-        ){
-            outputStream.writeObject(userList.getFirst());
-            messageLabel.setText("Successfully saved to file.");
+        try {
+            String customerId = CustomeridTextfield.getText();
+            double dues = Double.parseDouble(previousduesTextField.getText());
+            int units = Integer.parseInt(totalunitsconsumedTextField.getText());
+            double unitRate = 10.0;
+            double total = dues + (units * unitRate);
+
+            // Save to file using object output string
+            try (FileOutputStream fileOut = new FileOutputStream("bill_" + customerId + ".txt");
+                 ObjectOutputStream out = new ObjectOutputStream(fileOut)) {
+                out.writeObject("Customer ID: " + customerId + "\nTotal Bill: " + total);
+            }
+
+            showAlert("Saved", "Bill saved as bill_" + customerId + ".txt");
+
+        } catch (IOException | NumberFormatException e) {
+            showAlert("Error", "Failed to save. Check input values.");
         }
-        catch (IOException e) {
-            e.printStackTrace();
-            messageLabel.setText("Could not write to file");
-        }
-    }
     }
 
+    private void showAlert(String title, String content) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(title);
+        alert.setContentText(content);
+        alert.show();
+    }
 }

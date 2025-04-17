@@ -8,15 +8,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class FinanceOfficer8 {
@@ -48,7 +45,7 @@ public class FinanceOfficer8 {
     @FXML
     private TableColumn<FinanceOfficerModelClass4, String> statusColumn;
 
-    ArrayList<FinanceOfficerModelClass4> FinanceOfficerModelClass4list= new ArrayList<>();
+    ArrayList<FinanceOfficerModelClass4> FinanceOfficerModelClass4list = new ArrayList<>();
 
     @FXML
     public void initialize() {
@@ -58,10 +55,23 @@ public class FinanceOfficer8 {
         dueDateColumn.setCellValueFactory(new PropertyValueFactory<>("Due Date"));
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("Status"));
     }
+
     @FXML
     void FilterOnActionButton(ActionEvent event) {
-
+        LocalDate selectedDate = filterdatePicker.getValue();
+        if (selectedDate != null) {
+            for (FinanceOfficerModelClass4 item : FinanceOfficerModelClass4list) {
+                if (selectedDate.equals(item.getDueDate())) {
+                    FinanceOfficerModelClass4list.add(item);
+                }
+            }
+            Statusmessage.setText("Filtered by date: " + selectedDate);
+        } else {
+            Statusmessage.setText("Please select a date to filter.");
+        }
     }
+
+
 
     @FXML
     void ReturnHomeOnActionButton(ActionEvent actionEvent) throws IOException {
@@ -70,14 +80,19 @@ public class FinanceOfficer8 {
 
     @FXML
     void SendReminderOnActionButton(ActionEvent event) {
-
+        FinanceOfficerModelClass4 selected = billingTable.getSelectionModel().getSelectedItem();
+        if (selected != null) {
+            Statusmessage.setText("Reminder sent to: " + selected.getCustomer());
+        } else {
+            Statusmessage.setText("Please select a row to send reminder.");
+        }
     }
-
-    public Label getStatusmessage() {
-        return Statusmessage;
-    }
-
-    public void setStatusmessage(Label statusmessage) {
-        Statusmessage = statusmessage;
+    private void showAlert(String title, String content) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(title);
+        alert.setContentText(content);
+        alert.show();
     }
 }
+
+
