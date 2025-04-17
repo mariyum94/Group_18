@@ -12,6 +12,7 @@ public class ProductionManagerDeshboardSceneController
 
     @javafx.fxml.FXML
     public void backButtonOnClicked(ActionEvent actionEvent)throws IOException {
+        SceneSwitcher.switchTo("/com/example/summit_power_company_/Login.fxml", actionEvent);
     }
 
     @javafx.fxml.FXML
