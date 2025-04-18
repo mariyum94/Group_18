@@ -14,7 +14,7 @@
         <Label layoutX="97.0" layoutY="123.0" text="Name:" />
         <TextField fx:id="nameTextField" layoutX="185.0" layoutY="119.0" prefWidth="250.0" />
 
-        <Label layoutX="80.0" layoutY="163.0" text="Employee ID:" />
+        <Label layoutX="89.0" layoutY="163.0" text="Employee ID:" />
         <TextField fx:id="idTextField" layoutX="185.0" layoutY="159.0" prefWidth="250.0" />
 
         <Label layoutX="82.0" layoutY="203.0" text="Department:" />

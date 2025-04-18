@@ -2,9 +2,7 @@ package com.example.summit_power_company_.Mariyum;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.IOException;
@@ -25,16 +23,20 @@ public class HRManager3 {
     private TableColumn<HRManagerModelClass2, String> statusColumn;
 
     static ArrayList<HRManagerModelClass2> HRManagerModelClass2list= new ArrayList<>();
+    @FXML
+    private ComboBox <String >LeaveTypeComboBOx;
+    @FXML
+    private TextField employeenameTextField;
+    @FXML
+    private Label massagelabel;
 
     @FXML
     public void initialize() {
+        LeaveTypeComboBOx.getItems().addAll("Present", "Absent", "Leave");
 
         employeeColumn.setCellValueFactory(new PropertyValueFactory<>("employee"));
         leaveTypeColumn.setCellValueFactory(new PropertyValueFactory<>("leave"));
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("Status"));
-
-        HRManagerModelClass2list.add(new HRManagerModelClass2("Ali", "Sick Leave", "Pending"));
-        HRManagerModelClass2list.add(new HRManagerModelClass2("Sara", "Casual Leave", "Pending"));
 
         leaveRequestTable.getItems().addAll(HRManagerModelClass2list);
     }
@@ -45,12 +47,30 @@ public class HRManager3 {
 
     @FXML
     void approveLeaveOnActionButton(ActionEvent event) {
+        HRManagerModelClass2 selectedLeave = leaveRequestTable.getSelectionModel().getSelectedItem();
 
+        if (selectedLeave != null) {
+            selectedLeave.setStatus("Approved");
+
+            // Refresh the table to reflect changes
+            leaveRequestTable.refresh();
+        } else {
+            showAlert("No Selection", "Please select a leave request to approve.");
+        }
     }
 
     @FXML
     void denyleaveOnActionButton(ActionEvent event) {
+        HRManagerModelClass2 selectedLeave = leaveRequestTable.getSelectionModel().getSelectedItem();
+        if (selectedLeave != null) {
+            // Update status to "Denied"
+            selectedLeave.setStatus("Denied");
 
+            // Refresh the table to reflect changes
+            leaveRequestTable.refresh();
+        } else {
+            showAlert("No Selection", "Please select a leave request to deny.");
+        }
     }
     private void showAlert(String title, String content) {
         Alert alert = new Alert(Alert.AlertType.ERROR);

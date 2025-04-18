@@ -29,6 +29,8 @@ public class HRManager2 {
     private Label statusLabel;
 
     static ArrayList<HRManagerModelClass1> HRManagerModelClass1list= new ArrayList<>();
+    @FXML
+    private DatePicker datepicker;
 
     @FXML
     public void initialize() {

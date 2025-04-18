@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane prefHeight="476.0" prefWidth="594.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.summit_power_company_.Mariyum.HRManager3">
     <children>
-        <TableView fx:id="leaveRequestTable" layoutX="33.0" layoutY="134.0" prefHeight="123.0" prefWidth="528.0">
+        <TableView fx:id="leaveRequestTable" layoutX="31.0" layoutY="214.0" prefHeight="123.0" prefWidth="528.0">
             <columns>
                 <TableColumn fx:id="employeeColumn" prefWidth="200" text="Employee Name" />
                 <TableColumn fx:id="leaveTypeColumn" prefWidth="150" text="Leave Type" />
@@ -16,10 +18,15 @@
             </columns>
         </TableView>
 
-        <Button layoutX="99.0" layoutY="301.0" onAction="#approveLeaveOnActionButton" prefWidth="100" text="Approve" textFill="#0ca8c4" />
+        <Button layoutX="139.0" layoutY="368.0" onAction="#approveLeaveOnActionButton" prefWidth="100" text="Approve" textFill="#0ca8c4" />
 
-        <Button layoutX="278.0" layoutY="301.0" onAction="#denyleaveOnActionButton" prefWidth="100" text="Deny" textFill="#0e8de1" />
+        <Button layoutX="313.0" layoutY="368.0" onAction="#denyleaveOnActionButton" prefWidth="100" text="Deny" textFill="#0e8de1" />
       <Button layoutX="490.0" layoutY="381.0" onAction="#ReturnHomeOnActionButton" text="Return Home" textFill="#178bc9" />
       <Label layoutX="149.0" layoutY="31.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text=" Approve/Deny Leave Requests" textFill="#20c3fa" />
+      <Label layoutX="88.0" layoutY="170.0" text="Employee :" />
+      <TextField fx:id="employeenameTextField" layoutX="184.0" layoutY="166.0" prefWidth="250.0" />
+      <ComboBox fx:id="LeaveTypeComboBOx" layoutX="189.0" layoutY="128.0" prefWidth="150.0" />
+      <Label layoutX="87.0" layoutY="132.0" text="Leave Type" />
+      <Label fx:id="massagelabel" layoutX="239.0" layoutY="419.0" prefHeight="18.0" prefWidth="150.0" />
     </children>
 </AnchorPane>
