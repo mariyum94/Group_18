@@ -17,7 +17,6 @@ public class HRManager5 {
     @FXML
     private ComboBox<String> traningtyprComboBox;
 
-    ArrayList<HRManagerModelClass3> HRManagerModelClass3list= new ArrayList<>();
 
     @FXML
     public void initialize() {

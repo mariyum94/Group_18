@@ -14,28 +14,30 @@ import java.util.ArrayList;
 public class HRManager8 {
 
     @FXML
-    private TableColumn<HRManagerModelClass4, String> Attendancecolumn;
+    private TableColumn<HRManagerModelClass3, String> Attendancecolumn;
 
     @FXML
-    private TableColumn<HRManagerModelClass4, String> Payrollcolumn;
+    private TableColumn<HRManagerModelClass3, String> Payrollcolumn;
 
     @FXML
-    private TableColumn<HRManagerModelClass4, String> Performancecolumn;
+    private TableColumn<HRManagerModelClass3, String> Performancecolumn;
 
     @FXML
-    private TableView<HRManagerModelClass4> reportTableview;
+    private TableView<HRManagerModelClass3> reportTableview;
 
     @FXML
     private ComboBox<String> reportTypeComboBox;
 
-    static ArrayList<HRManagerModelClass4> HRManagerModelClass4list= new ArrayList<>();
+    static ArrayList<HRManagerModelClass3> HRManagerModelClass3list= new ArrayList<>();
 
     @FXML
     public void initialize() {
+        reportTypeComboBox.getItems().addAll("Monthly", "Daily");
+
         Payrollcolumn.setCellValueFactory(new PropertyValueFactory<>(" Payroll"));
         Performancecolumn.setCellValueFactory(new PropertyValueFactory<>("Performance"));
         Attendancecolumn.setCellValueFactory(new PropertyValueFactory<>("Attendance"));
-        reportTableview.getItems().addAll(HRManagerModelClass4list);
+        reportTableview.getItems().addAll(HRManagerModelClass3list);
         }
 
     @FXML
