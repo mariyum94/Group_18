@@ -15,7 +15,7 @@
 
         <Text fill="#13b0ea" layoutX="230.0" layoutY="54.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Handle Late Payments" />
 
-        <TextField fx:id="customerSearchTextField" layoutX="200.0" layoutY="121.0" />
+        <TextField fx:id="customerSearchTextField" layoutX="187.0" layoutY="121.0" />
         <DatePicker fx:id="filterdatePicker" layoutX="187.0" layoutY="176.0" />
         <Button layoutX="466.0" layoutY="176.0" onAction="#FilterOnActionButton" prefHeight="26.0" prefWidth="66.0" text="Filter" textFill="#1195d7" />
 
