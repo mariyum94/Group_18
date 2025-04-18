@@ -60,16 +60,8 @@ public class FinanceOfficer1 {
             double unitRate = 10.0;
             double total = dues + (units * unitRate);
 
-            // Save to file using object output string
-            try (FileOutputStream fileOut = new FileOutputStream("bill_" + customerId + ".txt");
-                 ObjectOutputStream out = new ObjectOutputStream(fileOut)) {
-                out.writeObject("Customer ID: " + customerId + "\nTotal Bill: " + total);
-            }
-
-            showAlert("Saved", "Bill saved as bill_" + customerId + ".txt");
-
-        } catch (IOException | NumberFormatException e) {
-            showAlert("Error", "Failed to save. Check input values.");
+        } catch (NumberFormatException e) {
+            throw new RuntimeException(e);
         }
     }
 
