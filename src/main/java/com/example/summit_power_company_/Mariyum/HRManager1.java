@@ -3,13 +3,10 @@ package com.example.summit_power_company_.Mariyum;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.ObjectOutputStream;
 
 public class HRManager1 {
 
@@ -30,6 +27,19 @@ public class HRManager1 {
 
     @FXML
     private Label statusLabel;
+
+
+//        try (ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream("data/user.bin"))) {
+//            userList.clear();
+//            List< User > loadedList = (List<User>) inputStream.readObject();
+//            userList.addAll(loadedList);
+//
+////            userList = (List<User>) inputStream.readObject();
+//        } catch (ClassNotFoundException e) {
+//            e.printStackTrace();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
 
     @FXML
     void ReturnHomeOnActionButton(ActionEvent actionEvent) throws IOException {

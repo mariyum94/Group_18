@@ -121,10 +121,6 @@ public class FinanceOfficer7 {
     private void setFinanceOfficerModelClass3(FinanceOfficerModelClass3 record) {
     }
 
-    public void setMessage(String message) {
-        StatusLabel.setText(message);
-}
-
     @FXML
     void ReturnHomeOnActionButton(ActionEvent actionEvent) throws IOException {
         SceneSwitcher.switchTo("FinanceOfficerDashboard_View.fxml", actionEvent);
