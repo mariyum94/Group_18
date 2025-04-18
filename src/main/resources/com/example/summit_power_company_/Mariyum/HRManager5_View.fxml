@@ -6,7 +6,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="346.0" prefWidth="570.0" style="-fx-background-color: #f0f0f0; -fx-padding: 20;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="com.example.summit_power_company_.Mariyum.HRManager5">
+<AnchorPane prefHeight="346.0" prefWidth="570.0" style="-fx-background-color: #f0f0f0; -fx-padding: 20;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.summit_power_company_.Mariyum.HRManager5">
    <DatePicker fx:id="traningDate" layoutX="197.0" layoutY="147.0" />
    <Label layoutX="62.0" layoutY="106.0" prefHeight="18.0" prefWidth="112.0" text="Select Training Type" />
    <ComboBox fx:id="traningtyprComboBox" layoutX="197.0" layoutY="102.0" prefWidth="150.0" />
@@ -14,4 +14,5 @@
    <Button layoutX="197.0" layoutY="207.0" mnemonicParsing="false" onAction="#AssignEmployeesOnActionButton" text="Assign Employees" textFill="#1dc1ef" />
    <Button layoutX="430.0" layoutY="305.0" onAction="#ReturnHomeOnActionButton" text="Return Home" textFill="#178bc9" />
    <Label layoutX="152.0" layoutY="42.0" prefHeight="30.0" prefWidth="305.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Schedule Training Programs" textFill="#20c3fa" />
+   <Label fx:id="StatusLabel" layoutX="197.0" layoutY="276.0" prefHeight="18.0" prefWidth="150.0" />
 </AnchorPane>
