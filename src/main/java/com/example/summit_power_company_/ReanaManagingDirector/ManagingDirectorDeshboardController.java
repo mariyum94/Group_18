@@ -27,6 +27,7 @@ public class ManagingDirectorDeshboardController
 
     @javafx.fxml.FXML
     public void logOutOnButtonClicked(ActionEvent actionEvent)throws IOException {
+        SceneSwitcher.switchTo("/com/example/summit_power_company_/Login.fxml", actionEvent);
     }
 
     @javafx.fxml.FXML

@@ -2,6 +2,7 @@ package com.example.summit_power_company_.Mariyum;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -25,15 +26,16 @@ public class HRManager8 {
     private TableView<HRManagerModelClass4> reportTableview;
 
     @FXML
-    private ComboBox<?> reportTypeComboBox;
+    private ComboBox<String> reportTypeComboBox;
 
-    ArrayList<HRManagerModelClass4> HRManagerModelClass4list= new ArrayList<>();
+    static ArrayList<HRManagerModelClass4> HRManagerModelClass4list= new ArrayList<>();
 
     @FXML
     public void initialize() {
         Payrollcolumn.setCellValueFactory(new PropertyValueFactory<>(" Payroll"));
         Performancecolumn.setCellValueFactory(new PropertyValueFactory<>("Performance"));
         Attendancecolumn.setCellValueFactory(new PropertyValueFactory<>("Attendance"));
+        reportTableview.getItems().addAll(HRManagerModelClass4list);
         }
 
     @FXML
@@ -50,6 +52,11 @@ public class HRManager8 {
     void ReturnHomeOnActionButton(ActionEvent actionEvent) throws IOException {
         SceneSwitcher.switchTo("HRManagerDashboard_View.fxml", actionEvent);
     }
-
+    private void showAlert(String title, String content) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(title);
+        alert.setContentText(content);
+        alert.show();
+    }
 
 }

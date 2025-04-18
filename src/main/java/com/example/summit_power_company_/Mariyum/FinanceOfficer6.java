@@ -6,10 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
@@ -36,7 +33,7 @@ public class FinanceOfficer6 {
     @FXML
     private ComboBox<String> CategoryTypeComboBox;
 
-    ArrayList<FinanceOfficerModelClass2> FinanceOfficerModelClass2list= new ArrayList<>();
+    static ArrayList<FinanceOfficerModelClass2> FinanceOfficerModelClass2list= new ArrayList<>();
 
     @FXML
     public void initialize() {
@@ -45,6 +42,8 @@ public class FinanceOfficer6 {
         CategoryColumn.setCellValueFactory(new PropertyValueFactory<>("Category"));
 
         CategoryTypeComboBox.getItems().addAll("Monthly", "Daily");
+
+        expensesTableView.getItems().addAll(FinanceOfficerModelClass2list);
 }
 
 
@@ -56,6 +55,12 @@ public class FinanceOfficer6 {
     @FXML
     void ViewExpensesOnActionButton(ActionEvent event) {
 
+    }
+    private void showAlert(String title, String content) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(title);
+        alert.setContentText(content);
+        alert.show();
     }
 
 }
