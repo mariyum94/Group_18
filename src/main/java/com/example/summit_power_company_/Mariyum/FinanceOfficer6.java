@@ -1,11 +1,11 @@
 package com.example.summit_power_company_.Mariyum;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class FinanceOfficer6 {
@@ -49,7 +49,34 @@ public class FinanceOfficer6 {
 
     @FXML
     void ViewExpensesOnActionButton(ActionEvent event) {
+        try {
+            String amountText = amountTextField.getText();
+            String category = CategoryTypeComboBox.getValue();
+            LocalDate date = datepicker.getValue();
 
+            if (amountText.isBlank() || category == null || date == null) {
+                showAlert("Input Error", "Please fill all the fields before adding an expense.");
+                return;
+            }
+
+            int amount = Integer.parseInt(amountText);  // Convert amount to integer
+
+            // Create and add the new expense
+            FinanceOfficerModelClass2 expense = new FinanceOfficerModelClass2(date, amount, category);
+            FinanceOfficerModelClass2list.add(expense);
+
+            // Refresh the TableView
+            expensesTableView.getItems().clear();
+            expensesTableView.getItems().addAll(FinanceOfficerModelClass2list);
+
+            // Clear inputs
+            amountTextField.clear();
+            CategoryTypeComboBox.getSelectionModel().clearSelection();
+            datepicker.setValue(null);
+
+        } catch (NumberFormatException e) {
+            showAlert("Invalid Amount", "Please enter a valid number for the amount.");
+        }
     }
     private void showAlert(String title, String content) {
         Alert alert = new Alert(Alert.AlertType.ERROR);

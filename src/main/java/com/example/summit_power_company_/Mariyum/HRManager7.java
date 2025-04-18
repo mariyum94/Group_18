@@ -45,6 +45,7 @@ public class HRManager7 {
     @Deprecated
     public void ExporttoPDFOnActionButton(ActionEvent actionEvent) {
     }
+
     private void showAlert(String title, String content) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(title);

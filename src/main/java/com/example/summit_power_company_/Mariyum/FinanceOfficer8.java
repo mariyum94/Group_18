@@ -73,8 +73,6 @@ public class FinanceOfficer8 {
         }
     }
 
-
-
     @FXML
     void ReturnHomeOnActionButton(ActionEvent actionEvent) throws IOException {
         SceneSwitcher.switchTo("FinanceOfficerDashboard_View.fxml", actionEvent);
