@@ -35,4 +35,10 @@ public class ProjectPlanning
     @javafx.fxml.FXML
     public void GoToHome(ActionEvent actionEvent) {
     }
+
+    public class ResourceAllocation
+    {
+        @javafx.fxml.FXML
+        public void initialize() {
+        }}
 }
