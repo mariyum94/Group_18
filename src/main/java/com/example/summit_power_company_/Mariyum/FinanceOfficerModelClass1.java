@@ -4,19 +4,22 @@ import java.io.Serializable;
 
 public class FinanceOfficerModelClass1 implements Serializable {
     private String departmentName;
-    private String allocationAmount;
+    private double allocationAmount;
     private String customerId;
     private double previousDues;
     private int totalUnits;
     private double totalBill;
 
-    public FinanceOfficerModelClass1(String departmentName, String allocationAmount, String customerId, double previousDues, int totalUnits, double totalBill) {
+    public FinanceOfficerModelClass1(String departmentName, double allocationAmount, String customerId, double previousDues, int totalUnits, double totalBill) {
         this.departmentName = departmentName;
         this.allocationAmount = allocationAmount;
         this.customerId = customerId;
         this.previousDues = previousDues;
         this.totalUnits = totalUnits;
         this.totalBill = totalBill;
+    }
+
+    public FinanceOfficerModelClass1(String departmentName, double allocationAmount) {
     }
 
     public String getDepartmentName() {
@@ -27,11 +30,11 @@ public class FinanceOfficerModelClass1 implements Serializable {
         this.departmentName = departmentName;
     }
 
-    public String getAllocationAmount() {
+    public double getAllocationAmount() {
         return allocationAmount;
     }
 
-    public void setAllocationAmount(String allocationAmount) {
+    public void setAllocationAmount(double allocationAmount) {
         this.allocationAmount = allocationAmount;
     }
 
@@ -71,7 +74,7 @@ public class FinanceOfficerModelClass1 implements Serializable {
     public String toString() {
         return "FinanceOfficerModelClass1{" +
                 "departmentName='" + departmentName + '\'' +
-                ", allocationAmount='" + allocationAmount + '\'' +
+                ", allocationAmount=" + allocationAmount +
                 ", customerId='" + customerId + '\'' +
                 ", previousDues=" + previousDues +
                 ", totalUnits=" + totalUnits +

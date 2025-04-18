@@ -45,7 +45,7 @@ public class FinanceOfficer8 {
     @FXML
     private TableColumn<FinanceOfficerModelClass4, String> statusColumn;
 
-    ArrayList<FinanceOfficerModelClass4> FinanceOfficerModelClass4list = new ArrayList<>();
+  static ArrayList<FinanceOfficerModelClass4> FinanceOfficerModelClass4list = new ArrayList<>();
 
     @FXML
     public void initialize() {
@@ -54,6 +54,8 @@ public class FinanceOfficer8 {
         customerColumn.setCellValueFactory(new PropertyValueFactory<>("Customer"));
         dueDateColumn.setCellValueFactory(new PropertyValueFactory<>("Due Date"));
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("Status"));
+
+        billingTable.getItems().addAll(FinanceOfficerModelClass4list);
     }
 
     @FXML

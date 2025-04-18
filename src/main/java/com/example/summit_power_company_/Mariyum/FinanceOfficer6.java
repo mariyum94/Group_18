@@ -2,13 +2,8 @@ package com.example.summit_power_company_.Mariyum;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -27,13 +22,13 @@ public class FinanceOfficer6 {
     @FXML
     private TableView<FinanceOfficerModelClass2> expensesTableView;
     @FXML
-    private TextField dateTextField;
-    @FXML
     private TextField amountTextField;
     @FXML
     private ComboBox<String> CategoryTypeComboBox;
 
-    ArrayList<FinanceOfficerModelClass2> FinanceOfficerModelClass2list= new ArrayList<>();
+    static ArrayList<FinanceOfficerModelClass2> FinanceOfficerModelClass2list= new ArrayList<>();
+    @FXML
+    private DatePicker datepicker;
 
     @FXML
     public void initialize() {
@@ -42,6 +37,8 @@ public class FinanceOfficer6 {
         CategoryColumn.setCellValueFactory(new PropertyValueFactory<>("Category"));
 
         CategoryTypeComboBox.getItems().addAll("Monthly", "Daily");
+
+        expensesTableView.getItems().addAll(FinanceOfficerModelClass2list);
 }
 
 

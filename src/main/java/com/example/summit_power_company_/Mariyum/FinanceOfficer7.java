@@ -45,7 +45,7 @@ public class FinanceOfficer7 {
     @FXML
     private Label StatusLabel;
 
-    ArrayList<FinanceOfficerModelClass3> financeDataList = new ArrayList<>();
+    static ArrayList<FinanceOfficerModelClass3> FinanceOfficerModelClass3List = new ArrayList<>();
 
     @FXML
     public void initialize() {
@@ -55,68 +55,70 @@ public class FinanceOfficer7 {
         budgetColumn.setCellValueFactory(new PropertyValueFactory<>("budget"));
 
         CategoryTypeComboBox.getItems().addAll("Monthly", "Daily");
+
+        financialDataTableView.getItems().addAll(FinanceOfficerModelClass3List);
     }
 
     @FXML
     void AddDataOnActionButton(ActionEvent event) {
-        String budgetStr = BudgetTextField.getText();
-        String amountStr = amountTextField.getText();
-        LocalDate date = datePicker.getValue();
-        String category = CategoryTypeComboBox.getValue();
+            String budgetStr = BudgetTextField.getText();
+            String amountStr = amountTextField.getText();
+            LocalDate date = datePicker.getValue();
+            String category = CategoryTypeComboBox.getValue();
 
-        if (budgetStr.isBlank() || amountStr.isBlank() || date == null || category == null) {
-            StatusLabel.setText("Please provide all inputs");
-            return;
+            if (budgetStr.isBlank() || amountStr.isBlank() || date == null || category == null) {
+                StatusLabel.setText("Please provide all inputs");
+                return;
+            }
+
+
+            try {
+                double budget = Double.parseDouble(budgetStr);
+                int amount = Integer.parseInt(amountStr);
+                for (FinanceOfficerModelClass3 record : FinanceOfficerModelClass3List) {
+                    if (record.getDate().equals(date.toString()) && record.getCategory().equals(category)) {
+                        StatusLabel.setText("This record already exists!");
+                        return;
+                    }
+                }
+
+                FinanceOfficerModelClass3 record = new FinanceOfficerModelClass3(date.toString(), amount, category, budget);
+                FinanceOfficerModelClass3List.add(record);
+                financialDataTableView.getItems().add(record);
+
+                StatusLabel.setText("Record added successfully");
+
+                // Clear inputs
+                BudgetTextField.clear();
+                amountTextField.clear();
+                datePicker.setValue(null);
+                CategoryTypeComboBox.setValue(null);
+
+            } catch (NumberFormatException e) {
+                StatusLabel.setText("Invalid number format in Budget or Amount");
+            }
         }
 
-        try {
-            double budget = Double.parseDouble(budgetStr);
-            int amount = Integer.parseInt(amountStr);
-
-            FinanceOfficerModelClass3 record = new FinanceOfficerModelClass3(date.toString(), amount, category, budget);
-            financeDataList.add(record);
-            financialDataTableView.getItems().add(record);
-
-            StatusLabel.setText("Record added successfully");
-
-            // Clear form
-            BudgetTextField.clear();
-            amountTextField.clear();
-            datePicker.setValue(null);
-            CategoryTypeComboBox.setValue(null);
-
-        } catch (NumberFormatException e) {
-            StatusLabel.setText("Invalid number format in Budget or Amount");
-        }
-    }
-
-    @FXML
+        @FXML
     void DeleteDataOnActionButton(ActionEvent event) {
-        FinanceOfficerModelClass3 selected = financialDataTableView.getSelectionModel().getSelectedItem();
-        if (selected != null) {
-            financialDataTableView.getItems().remove(selected);
-            financeDataList.remove(selected);
-            StatusLabel.setText("Record deleted");
-        } else {
-            StatusLabel.setText("Please select a record to delete");
-        }
-    }
+
+     }
 
     @FXML
     void EditDataOnActionButton(ActionEvent event) throws IOException {
-//        FinanceOfficerModelClass3 selected = financialDataTableView.getSelectionModel().getSelectedItem();
-//        if (selected != null) {
-//            FXMLLoader loader = new FXMLLoader(getClass().getResource("edit-user.fxml"));
-//            Parent root = loader.load();
-//
-//            EditUserController controller = loader.getController();
-//            controller.setUser(selected); // Ensure EditUserController has setUser method
-//
-//            Stage stage = (Stage) StatusLabel.getScene().getWindow();
-//            stage.setScene(new Scene(root));
-//        } else {
-//            StatusLabel.setText("Please select a record to edit");
-//        }
+        FinanceOfficerModelClass3 record = financialDataTableView.getSelectionModel().getSelectedItem();
+        if (record != null) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("FinanceOfficer7_View.fxml"));
+            Parent root = loader.load();
+
+            FinanceOfficer7 controller = loader.getController();
+            controller.setFinanceOfficerModelClass3(record);
+
+            Stage stage = (Stage) StatusLabel.getScene().getWindow();
+            stage.setScene(new Scene(root));
+        }
+    }
+    private void setFinanceOfficerModelClass3(FinanceOfficerModelClass3 record) {
     }
 
     @FXML
