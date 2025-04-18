@@ -22,6 +22,9 @@ public class FinanceOfficerModelClass1 implements Serializable {
     public FinanceOfficerModelClass1(String departmentName, double allocationAmount) {
     }
 
+    public FinanceOfficerModelClass1(String department, String amount) {
+    }
+
     public String getDepartmentName() {
         return departmentName;
     }

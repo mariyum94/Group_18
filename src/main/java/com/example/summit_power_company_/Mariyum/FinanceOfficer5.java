@@ -20,7 +20,7 @@ public class FinanceOfficer5 {
     private TableColumn<FinanceOfficerModelClass1, String> departmentColumn;
 
     @FXML
-    private TableColumn<FinanceOfficerModelClass1, String> amountColumn;
+    private TableColumn<FinanceOfficerModelClass1, Double> amountColumn;
 
     @FXML
     private TextField departmentTextField;
@@ -39,6 +39,30 @@ public class FinanceOfficer5 {
 
     @FXML
     void DistributeFundsOnActionButton(ActionEvent event) {
+        String department = departmentTextField.getText();
+        String amount = amountTextField.getText();
+
+        if (department.isBlank() || amount.isBlank()) {
+            showAlert("Input Error", "Please fill in both department and amount fields.");
+            return;
+        }
+
+        try {
+            // Create a new allocation entry
+            FinanceOfficerModelClass1 allocation = new FinanceOfficerModelClass1(department, amount);
+
+            // Add to the list and refresh the TableView
+            FinanceOfficerModelClass1list.add(allocation);
+            allocationTable.getItems().clear();
+            allocationTable.getItems().addAll(FinanceOfficerModelClass1list);
+
+            // Clear the input fields
+            departmentTextField.clear();
+            amountTextField.clear();
+
+        } catch (Exception e) {
+            showAlert("Error", "An unexpected error occurred while adding the allocation.");
+        }
     }
 
     @FXML

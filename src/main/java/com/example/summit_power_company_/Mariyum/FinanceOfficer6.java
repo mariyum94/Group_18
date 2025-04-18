@@ -58,7 +58,6 @@ public class FinanceOfficer6 {
                 showAlert("Input Error", "Please fill all the fields before adding an expense.");
                 return;
             }
-
             int amount = Integer.parseInt(amountText);  // Convert amount to integer
 
             // Create and add the new expense
