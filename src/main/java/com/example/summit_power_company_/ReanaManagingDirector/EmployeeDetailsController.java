@@ -26,4 +26,12 @@ public class EmployeeDetailsController
     public void backButtonOnClicked(ActionEvent actionEvent)throws IOException {
         SceneSwitcher.switchTo("/com/example/summit_power_company_/ReanaManagingDirector/ManagingDirectorDeshboard.fxml", actionEvent);
     }
+
+    @javafx.fxml.FXML
+    public void addButton(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void pdfButton(ActionEvent actionEvent) {
+    }
 }
