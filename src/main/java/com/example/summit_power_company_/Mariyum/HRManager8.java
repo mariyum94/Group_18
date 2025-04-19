@@ -4,61 +4,52 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.Label;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class HRManager8 {
 
     @FXML
-    private TableColumn<HRManagerModelClass3, String> Attendancecolumn;
+    private ComboBox <String> complaintComboBox;
+    @FXML
+    private Label statusLabel;
 
     @FXML
-    private TableColumn<HRManagerModelClass3, String> Payrollcolumn;
 
-    @FXML
-    private TableColumn<HRManagerModelClass3, String> Performancecolumn;
+        public void initialize() {
+            complaintComboBox.getItems().addAll(
+                    "Billing Error",
+                    "Service Interruption",
+                    "Incorrect Meter Reading",
+                    "Late Technician Visit",
+                    "Other"
+            );
 
-    @FXML
-    private TableView<HRManagerModelClass3> reportTableview;
-
-    @FXML
-    private ComboBox<String> reportTypeComboBox;
-
-    static ArrayList<HRManagerModelClass3> HRManagerModelClass3list= new ArrayList<>();
-
-    @FXML
-    public void initialize() {
-        reportTypeComboBox.getItems().addAll("Monthly", "Daily");
-
-        Payrollcolumn.setCellValueFactory(new PropertyValueFactory<>(" Payroll"));
-        Performancecolumn.setCellValueFactory(new PropertyValueFactory<>("Performance"));
-        Attendancecolumn.setCellValueFactory(new PropertyValueFactory<>("Attendance"));
-        reportTableview.getItems().addAll(HRManagerModelClass3list);
-        }
-
-    @FXML
-    void ExporttoPDFOnActionButton(ActionEvent event) {
 
     }
-
-    @FXML
-    void GenerateReportOnActionButton(ActionEvent event) {
-
-    }
-
     @FXML
     void ReturnHomeOnActionButton(ActionEvent actionEvent) throws IOException {
         SceneSwitcher.switchTo("HRManagerDashboard_View.fxml", actionEvent);
     }
+
+    @FXML
+    void resolveIssueOnActionButton(ActionEvent event) {
+
+    }
+
+    @Deprecated
+    public void GenerateReportOnActionButton(ActionEvent actionEvent) {
+        showAlert("Feature Disabled", "This button is deprecated.");
+    }
+    @Deprecated
+    public void ExporttoPDFOnActionButton(ActionEvent actionEvent) {
+    }
+
     private void showAlert(String title, String content) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(title);
         alert.setContentText(content);
         alert.show();
     }
-
 }
