@@ -40,8 +40,8 @@ public class HRManager7 {
 
     @Deprecated
     public void GenerateReportOnActionButton(ActionEvent actionEvent) {
+        showAlert("Feature Disabled", "This button is deprecated.");
     }
-
     @Deprecated
     public void ExporttoPDFOnActionButton(ActionEvent actionEvent) {
     }
