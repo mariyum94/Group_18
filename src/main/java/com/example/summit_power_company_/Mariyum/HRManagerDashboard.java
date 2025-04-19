@@ -36,12 +36,12 @@ public class HRManagerDashboard {
 
     @javafx.fxml.FXML
     void HandleEmployeeComplaintsOnActionButton(ActionEvent actionEvent)  throws IOException {
-        SceneSwitcher.switchTo("/com/example/summit_power_company_/Mariyum/HRManager7_View.fxml", actionEvent);
+        SceneSwitcher.switchTo("/com/example/summit_power_company_/Mariyum/HRManager8_View.fxml", actionEvent);
     }
 
     @javafx.fxml.FXML
     void GeneratingEmployeeReportsOnActionButton(ActionEvent actionEvent)  throws IOException {
-        SceneSwitcher.switchTo("/com/example/summit_power_company_/Mariyum/HRManager8_View.fxml", actionEvent);
+        SceneSwitcher.switchTo("/com/example/summit_power_company_/Mariyum/HRManager7_View.fxml", actionEvent);
     }
     @javafx.fxml.FXML
     public void LogOutOnActionButton(ActionEvent actionEvent) throws IOException{
