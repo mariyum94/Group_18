@@ -4,9 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.ObjectOutputStream;
 
 public class FinanceOfficer1 {
 
@@ -51,33 +49,19 @@ public class FinanceOfficer1 {
         SceneSwitcher.switchTo("FinanceOfficerDashboard_View.fxml", actionEvent);
     }
 
-    @FXML
-    void SavePrintOnActionButton(ActionEvent event) {
-        try {
-            String customerId = CustomeridTextfield.getText();
-            double dues = Double.parseDouble(previousduesTextField.getText());
-            int units = Integer.parseInt(totalunitsconsumedTextField.getText());
-            double unitRate = 10.0;
-            double total = dues + (units * unitRate);
+    @Deprecated
+    void SavePDFOnActionButton(ActionEvent event) {
 
-            // Save to file using object output string
-            try (FileOutputStream fileOut = new FileOutputStream("bill_" + customerId + ".txt");
-                 ObjectOutputStream out = new ObjectOutputStream(fileOut)) {
-                out.writeObject("Customer ID: " + customerId + "\nTotal Bill: " + total);
-            }
-
-            showAlert("Saved", "Bill saved as bill_" + customerId + ".txt");
-
-        } catch (IOException | NumberFormatException e) {
-            showAlert("Error", "Failed to save. Check input values.");
-        }
     }
-
 
     private void showAlert(String title, String content) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(title);
         alert.setContentText(content);
         alert.show();
+    }
+
+    @FXML
+    public void SavePdfOnActionButton(ActionEvent actionEvent) {
     }
 }

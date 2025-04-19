@@ -101,8 +101,15 @@ public class FinanceOfficer7 {
 
         @FXML
     void DeleteDataOnActionButton(ActionEvent event) {
-
-     }
+            FinanceOfficerModelClass3 record = financialDataTableView.getSelectionModel().getSelectedItem();
+            if (record != null) {
+                FinanceOfficerModelClass3List.remove(record);
+                financialDataTableView.getItems().remove(record);
+                StatusLabel.setText("Record deleted.");
+            } else {
+                StatusLabel.setText("Please select a row to delete.");
+            }
+        }
 
     @FXML
     void EditDataOnActionButton(ActionEvent event) throws IOException {

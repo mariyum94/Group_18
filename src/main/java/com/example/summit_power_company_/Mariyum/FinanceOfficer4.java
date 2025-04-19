@@ -46,14 +46,6 @@ public class FinanceOfficer4 {
     }
     @FXML
     public void exportPdfOnActionButton(ActionEvent actionEvent) {
-        String profitLoss = ProfitorlossTextField.getText();
-        if (profitLoss.isEmpty()) {
-            showAlert("Export Error", "Please generate the report first.");
-        } else {
-            // Simulate export
-            System.out.println("Exporting report to PDF...");
-            showAlert("Export", "Report exported as PDF (simulated).");
-        }
     }
 
     @FXML

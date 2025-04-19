@@ -1,5 +1,6 @@
 package com.example.summit_power_company_;
 
+import com.example.summit_power_company_.Mariyum.SceneSwitcher;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -43,7 +44,7 @@ public class LoginController {
             stage.setScene(new Scene(root));
             stage.show();
         } else if (username.equals(HRManagerID) && password.equals(HRManagerpassword)) {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/summit_power_company_/Mariyum/FinanceOfficerDashboard_View.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/summit_power_company_/Mariyum/HRManagerDashboard_View.fxml"));
             Parent root = loader.load();
             Stage stage = (Stage) usernameTextField.getScene().getWindow();
             stage.setScene(new Scene(root));
@@ -51,9 +52,9 @@ public class LoginController {
 
         } else if (username.equals(reana) && password.equals(reanapassword)) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/summit_power_company_/ReanaManagingDirector/Users.fxml"));
-           Parent root = loader.load();
-           Stage stage = (Stage) usernameTextField.getScene().getWindow();
-           stage.setScene(new Scene(root));
+            Parent root = loader.load();
+            Stage stage = (Stage) usernameTextField.getScene().getWindow();
+            stage.setScene(new Scene(root));
             stage.show();
             //others path
         } else {

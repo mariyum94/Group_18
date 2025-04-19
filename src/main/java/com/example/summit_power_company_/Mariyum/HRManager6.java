@@ -26,7 +26,16 @@ public class HRManager6 {
 
     @FXML
     void comfirmpromotionOnActionButton(ActionEvent event) {
+        String selectedEmployee = employeecomboBox.getSelectionModel().getSelectedItem();
+        String selectedRole = newrolecomboBox.getSelectionModel().getSelectedItem();
 
+        if (selectedEmployee != null && selectedRole != null) {
+
+            showAlert("Promotion Successful", selectedEmployee + " has been promoted to " + selectedRole + "!");
+        } else {
+            // Show an error if either the employee or new role is not selected
+            showAlert("Incomplete Selection", "Please select both an employee and a new role.");
+        }
     }
     private void showAlert(String title, String content) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
