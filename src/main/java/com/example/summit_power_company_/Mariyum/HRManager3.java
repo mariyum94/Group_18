@@ -22,14 +22,16 @@ public class HRManager3 {
     @FXML
     private TableColumn<HRManagerModelClass2, String> statusColumn;
 
-    static ArrayList<HRManagerModelClass2> HRManagerModelClass2list= new ArrayList<>();
+
     @FXML
     private ComboBox <String >LeaveTypeComboBOx;
     @FXML
     private TextField employeenameTextField;
+
     @FXML
     private Label massagelabel;
 
+    static ArrayList<HRManagerModelClass2> HRManagerModelClass2list= new ArrayList<>();
     @FXML
     public void initialize() {
         LeaveTypeComboBOx.getItems().addAll("Present", "Absent", "Leave");

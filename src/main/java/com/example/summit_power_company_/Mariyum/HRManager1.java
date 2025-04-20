@@ -7,6 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 import java.io.*;
+import java.util.ArrayList;
 
 public class HRManager1 {
 
@@ -28,7 +29,7 @@ public class HRManager1 {
     @FXML
     private Label statusLabel;
 
-
+    static ArrayList<HRManagerModelClass4> HRManagerModelClass4list= new ArrayList<>();
 
     @FXML
     void ReturnHomeOnActionButton(ActionEvent actionEvent) throws IOException {
@@ -37,25 +38,13 @@ public class HRManager1 {
 
     @FXML
     void SaveEmployeeOnActionButton(ActionEvent event) {
-        String id = idTextField.getText();
-        String name = nameTextField.getText();
-        String role = roleTextField.getText();
-        String department = departmentTextField.getText();
-        String salary = salaryTextField.getText();
-
-        if (id.isEmpty() || name.isEmpty() || role.isEmpty() || department.isEmpty() || salary.isEmpty()) {
-            showAlert("Missing Fields", "Please fill out all fields.");
-            return;
-        }
-        try (ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream("data/user.bin"))) {
-            Object userList = null;
-            outputStream.writeObject(null);
+        try (ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream("employee.bin"))) {
+            outputStream.writeObject(HRManagerModelClass4list);
             statusLabel.setText("Successfully saved to file.");
         } catch (IOException e) {
             e.printStackTrace();
             statusLabel.setText("Could not write to file");
         }
-
     }
 
     private void showAlert(String title, String content) {
