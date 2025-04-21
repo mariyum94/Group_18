@@ -5,7 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400" prefWidth="600" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="com.example.summit_power_company_.Mariyum.HRManager8">
+<AnchorPane prefHeight="400" prefWidth="600" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.summit_power_company_.Mariyum.HRManager8">
 
     <!-- Complaint Type Label -->
     <Label layoutX="41.0" layoutY="157.0" text="Select Complaint Type:" />
@@ -14,7 +14,7 @@
     <ComboBox fx:id="complaintComboBox" layoutX="186.0" layoutY="153.0" prefWidth="200" />
 
     <!-- Resolve Button -->
-    <Button layoutX="230.0" layoutY="211.0" onAction="#resolveIssueOnActionButton" text="Resolve Issue" textFill="#1895cf" />
+    <Button layoutX="209.0" layoutY="219.0" onAction="#resolveIssueOnActionButton" text="Resolve Issue" textFill="#1895cf" />
 
     <!-- Status Label -->
     <Label fx:id="statusLabel" layoutX="156.0" layoutY="261.0" prefHeight="18.0" prefWidth="193.0" textFill="green" />

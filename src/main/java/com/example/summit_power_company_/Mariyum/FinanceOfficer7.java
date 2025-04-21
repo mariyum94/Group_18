@@ -9,9 +9,10 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
-import java.io.IOException;
+import java.io.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
 public class FinanceOfficer7 {
 
@@ -45,7 +46,23 @@ public class FinanceOfficer7 {
     @FXML
     private Label StatusLabel;
 
-    static ArrayList<FinanceOfficerModelClass3> FinanceOfficerModelClass3List = new ArrayList<>();
+    public static FinanceOfficerModelClass3 FinanceOfficerModelClass3rToEdit = null;
+    static List<FinanceOfficerModelClass3> FinanceOfficerModelClass3List = new ArrayList<>();
+
+    static {
+//        userList.add(new User("asif", "1234", "admin"));
+        try (ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream("FinanceOfficerModelClass3.bin"))) {
+            FinanceOfficerModelClass3List.clear();
+            List<FinanceOfficerModelClass3> loadedList = (List<FinanceOfficerModelClass3>) inputStream.readObject();
+            FinanceOfficerModelClass3List.addAll(loadedList);
+
+//            userList = (List<User>) inputStream.readObject();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     @FXML
     public void initialize() {
@@ -61,45 +78,48 @@ public class FinanceOfficer7 {
 
     @FXML
     void AddDataOnActionButton(ActionEvent event) {
-            String budgetStr = BudgetTextField.getText();
-            String amountStr = amountTextField.getText();
-            LocalDate date = datePicker.getValue();
-            String category = CategoryTypeComboBox.getValue();
+        String Budget = BudgetTextField.getText();
+        String amount = amountTextField.getText();
+        LocalDate date = datePicker.getValue();
+        String category = CategoryTypeComboBox.getValue();
+        if (Budget.isBlank() || amount.isBlank() || date == null || category == null) {
+            StatusLabel.setText("Please provide all inputs");
+            return;
+        }
+//        if (password.length() < 8) {
+//            messageLabel.setText("Password must be at least 8 characters long!");
+//            return;
 
-            if (budgetStr.isBlank() || amountStr.isBlank() || date == null || category == null) {
-                StatusLabel.setText("Please provide all inputs");
-                return;
-            }
-
-
-            try {
-                double budget = Double.parseDouble(budgetStr);
-                int amount = Integer.parseInt(amountStr);
-                for (FinanceOfficerModelClass3 record : FinanceOfficerModelClass3List) {
-                    if (record.getDate().equals(date.toString()) && record.getCategory().equals(category)) {
-                        StatusLabel.setText("This record already exists!");
-                        return;
-                    }
-                }
-
-                FinanceOfficerModelClass3 record = new FinanceOfficerModelClass3(date.toString(), amount, category, budget);
-                FinanceOfficerModelClass3List.add(record);
-                financialDataTableView.getItems().add(record);
-
-                StatusLabel.setText("Record added successfully");
-
-                // Clear inputs
-                BudgetTextField.clear();
-                amountTextField.clear();
-                datePicker.setValue(null);
-                CategoryTypeComboBox.setValue(null);
-
-            } catch (NumberFormatException e) {
-                StatusLabel.setText("Invalid number format in Budget or Amount");
-            }
+        double budgetInput;
+        int amountInput;
+        try {
+            budgetInput = Double.parseDouble(Budget);
+        } catch (NumberFormatException e) {
+            StatusLabel.setText("Invalid budget value. Please enter a number.");
+            return;
         }
 
-        @FXML
+        try {
+            amountInput = Integer.parseInt(amount);
+        } catch (NumberFormatException e) {
+            StatusLabel.setText("Invalid amount value. Please enter an integer.");
+            return;
+        }
+
+        FinanceOfficerModelClass3 user = new FinanceOfficerModelClass3(Budget, amount, date);
+        FinanceOfficerModelClass3List.add(user);
+        financialDataTableView.getItems().add(user);
+        StatusLabel.setText(" added successfully");
+//        System.out.println("Currently " + userList.size() + " users in the list");
+
+        BudgetTextField.setText("");
+        amountTextField.setText("");
+        datePicker.setValue(null);
+        CategoryTypeComboBox.setValue(null);
+    }
+
+
+    @FXML
     void DeleteDataOnActionButton(ActionEvent event) {
             FinanceOfficerModelClass3 record = financialDataTableView.getSelectionModel().getSelectedItem();
             if (record != null) {
@@ -138,4 +158,36 @@ public class FinanceOfficer7 {
         alert.setTitle(title);
         alert.setContentText(content);
         alert.show();
-    }}
+    }
+
+    @FXML
+    public void saveToFileOnActionButton(ActionEvent actionEvent) {
+        try (ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream("data/FinanceOfficerModelClass3.bin"))) {
+            outputStream.writeObject(FinanceOfficerModelClass3List);
+            StatusLabel.setText("Successfully saved to file.");
+        } catch (IOException e) {
+            e.printStackTrace();
+            StatusLabel.setText("Could not write to file");
+        }
+    }
+
+    @FXML
+    public void loadFromFileOnActionButton(ActionEvent actionEvent) {
+        try (ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream("data/FinanceOfficerModelClass3.bin"))) {
+            FinanceOfficerModelClass3List.clear();
+            financialDataTableView.getItems().clear();
+
+            List< FinanceOfficerModelClass3 > loadedList = (List<FinanceOfficerModelClass3>) inputStream.readObject();
+            FinanceOfficerModelClass3List.addAll(loadedList);
+            financialDataTableView.getItems().addAll(loadedList);
+
+            StatusLabel.setText("Successfully loaded data");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+            StatusLabel.setText("Invalid file format");
+        } catch (IOException e) {
+            e.printStackTrace();
+            StatusLabel.setText("Could not load data from file!");
+        }
+    }
+    }

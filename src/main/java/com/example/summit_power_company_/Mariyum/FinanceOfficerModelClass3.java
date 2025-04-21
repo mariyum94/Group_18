@@ -1,6 +1,7 @@
 package com.example.summit_power_company_.Mariyum;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 
 public class FinanceOfficerModelClass3 implements Serializable {
     private String date;
@@ -13,6 +14,9 @@ public class FinanceOfficerModelClass3 implements Serializable {
         this.amount = amount;
         this.category = category;
         this.budget = budget;
+    }
+
+    public FinanceOfficerModelClass3(String budget, String amount, LocalDate date) {
     }
 
     public String getDate() {

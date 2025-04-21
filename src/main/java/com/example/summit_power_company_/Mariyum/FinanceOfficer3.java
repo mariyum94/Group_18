@@ -59,7 +59,7 @@ public class FinanceOfficer3 {
             FinalSalaryTextField.setText(String.valueOf(finalSalary));
 
         } catch (NumberFormatException e) {
-            showAlert("Input Error", "Please enter valid numbers for bonus and deduction.");
+            showAlert("Input Error", "Please enter valid numbers .");
         }
     }
     @FXML

@@ -37,15 +37,6 @@ public class HRManager8 {
     void resolveIssueOnActionButton(ActionEvent event) {
 
     }
-
-    @Deprecated
-    public void GenerateReportOnActionButton(ActionEvent actionEvent) {
-        showAlert("Feature Disabled", "This button is deprecated.");
-    }
-    @Deprecated
-    public void ExporttoPDFOnActionButton(ActionEvent actionEvent) {
-    }
-
     private void showAlert(String title, String content) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(title);

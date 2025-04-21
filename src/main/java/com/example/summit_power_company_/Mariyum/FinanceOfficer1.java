@@ -49,11 +49,6 @@ public class FinanceOfficer1 {
         SceneSwitcher.switchTo("FinanceOfficerDashboard_View.fxml", actionEvent);
     }
 
-    @Deprecated
-    void SavePDFOnActionButton(ActionEvent event) {
-
-    }
-
     private void showAlert(String title, String content) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(title);

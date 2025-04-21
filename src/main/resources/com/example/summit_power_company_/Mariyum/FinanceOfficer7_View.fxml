@@ -9,38 +9,36 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.summit_power_company_.Mariyum.FinanceOfficer7">
+<AnchorPane prefHeight="586.0" prefWidth="642.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.summit_power_company_.Mariyum.FinanceOfficer7">
     <children>
-
 
         <TableView fx:id="financialDataTableView" layoutX="50.0" layoutY="80.0" prefHeight="139.0" prefWidth="500.0">
             <columns>
-
-                <TableColumn fx:id="dateColumn" prefWidth="124.00006103515625" text="Date" />
-
-                <TableColumn fx:id="amountColumn" prefWidth="132.7999267578125" text="Amount" />
-
+                <TableColumn fx:id="dateColumn" prefWidth="124.0" text="Date" />
+                <TableColumn fx:id="amountColumn" prefWidth="132.8" text="Amount" />
                 <TableColumn fx:id="categoryColumn" prefWidth="100.0" text="Category" />
-                <TableColumn fx:id="budgetColumn" prefWidth="142.4000244140625" text="Budget" />
+                <TableColumn fx:id="budgetColumn" prefWidth="142.4" text="Budget" />
             </columns>
         </TableView>
 
         <Button layoutX="70.0" layoutY="399.0" onAction="#AddDataOnActionButton" text="Add Data" textFill="#0e8ad7" />
-
         <Button layoutX="199.0" layoutY="400.0" onAction="#EditDataOnActionButton" text="Edit Data" textFill="#1082c9" />
-
-
         <Button layoutX="322.0" layoutY="400.0" onAction="#DeleteDataOnActionButton" text="Delete Data" textFill="#0a75c7" />
-      <Label layoutX="170.0" layoutY="21.0" prefHeight="27.0" prefWidth="238.0" style="-fx-font-size: 18px;" text="Financial Data Management" textFill="#119fc7" />
-      <Label layoutX="95.0" layoutY="234.0" prefHeight="18.0" prefWidth="63.0" text="Date" />
-      <Label layoutX="91.0" layoutY="270.0" prefHeight="18.0" prefWidth="72.0" text="Amount" />
-      <Label layoutX="91.0" layoutY="306.0" prefHeight="18.0" prefWidth="72.0" text="Category" />
-      <TextField fx:id="amountTextField" layoutX="179.0" layoutY="266.0" />
-      <ComboBox fx:id="CategoryTypeComboBox" layoutX="179.0" layoutY="303.0" prefWidth="150.0" />
-      <TextField fx:id="BudgetTextField" layoutX="179.0" layoutY="348.0" />
-      <Label layoutX="91.0" layoutY="348.0" prefHeight="18.0" prefWidth="63.0" text="Budget" />
-      <Button layoutX="455.0" layoutY="444.0" onAction="#ReturnHomeOnActionButton" text="Return Home" textFill="#178bc9" />
-      <Label fx:id="StatusLabel" layoutX="165.0" layoutY="447.0" prefHeight="26.0" prefWidth="224.0" />
-      <DatePicker fx:id="datePicker" layoutX="167.0" layoutY="231.0" />
+        <Button layoutX="179.0" layoutY="518.0" onAction="#saveToFileOnActionButton" text="Save" textFill="#0d75b7" />
+        <Button layoutX="321.0" layoutY="524.0" onAction="#loadFromFileOnActionButton" text="Load" textFill="#0d75b7" />
+
+        <Label layoutX="170.0" layoutY="21.0" prefHeight="27.0" prefWidth="238.0" style="-fx-font-size: 18px;" text="Financial Data Management" textFill="#119fc7" />
+        <Label layoutX="95.0" layoutY="234.0" prefHeight="18.0" prefWidth="63.0" text="Date" />
+        <Label layoutX="91.0" layoutY="270.0" prefHeight="18.0" prefWidth="72.0" text="Amount" />
+        <Label layoutX="91.0" layoutY="306.0" prefHeight="18.0" prefWidth="72.0" text="Category" />
+        <Label layoutX="91.0" layoutY="348.0" prefHeight="18.0" prefWidth="63.0" text="Budget" />
+
+        <TextField fx:id="amountTextField" layoutX="179.0" layoutY="266.0" />
+        <ComboBox fx:id="CategoryTypeComboBox" layoutX="179.0" layoutY="303.0" prefWidth="150.0" />
+        <TextField fx:id="BudgetTextField" layoutX="179.0" layoutY="348.0" />
+        <DatePicker fx:id="datePicker" layoutX="167.0" layoutY="231.0" />
+
+        <Button layoutX="455.0" layoutY="444.0" onAction="#ReturnHomeOnActionButton" text="Return Home" textFill="#178bc9" />
+        <Label fx:id="StatusLabel" layoutX="143.0" layoutY="456.0" prefHeight="26.0" prefWidth="224.0" />
     </children>
 </AnchorPane>

@@ -1,6 +1,9 @@
 package com.example.summit_power_company_.Mariyum;
+
+import java.io.Serializable;
+
 //this model class for file handaling
-public class HRManagerModelClass4 {
+public class HRManagerModelClass4 implements Serializable {
     private String employeeName;
     private String complaintType;
     private String status;
