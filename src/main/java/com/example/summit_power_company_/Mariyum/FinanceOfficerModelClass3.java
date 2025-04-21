@@ -4,34 +4,31 @@ import java.io.Serializable;
 import java.time.LocalDate;
 
 public class FinanceOfficerModelClass3 implements Serializable {
-    private String date;
-    private double amount;
+    private LocalDate date;
+    private int amount;
     private String category;
     private double budget;
 
-    public FinanceOfficerModelClass3(String date, double amount, String category, double budget) {
+    public FinanceOfficerModelClass3(LocalDate date, int amount, String category, double budget) {
         this.date = date;
         this.amount = amount;
         this.category = category;
         this.budget = budget;
     }
 
-    public FinanceOfficerModelClass3(String budget, String amount, LocalDate date) {
-    }
-
-    public String getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
-    public double getAmount() {
+    public int getAmount() {
         return amount;
     }
 
-    public void setAmount(double amount) {
+    public void setAmount(int amount) {
         this.amount = amount;
     }
 
@@ -53,8 +50,8 @@ public class FinanceOfficerModelClass3 implements Serializable {
 
     @Override
     public String toString() {
-        return "FinanceOfficerModelClass7{" +
-                "date='" + date + '\'' +
+        return "FinanceOfficerModelClass3{" +
+                "date=" + date +
                 ", amount=" + amount +
                 ", category='" + category + '\'' +
                 ", budget=" + budget +

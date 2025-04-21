@@ -2,12 +2,8 @@ package com.example.summit_power_company_.Mariyum;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.stage.Stage;
 
 import java.io.*;
 import java.time.LocalDate;
@@ -51,15 +47,13 @@ public class FinanceOfficer7 {
 
     static {
 //        userList.add(new User("asif", "1234", "admin"));
-        try (ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream("FinanceOfficerModelClass3.bin"))) {
+        try (ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream("FinanceOfficer7.bin"))) {
             FinanceOfficerModelClass3List.clear();
             List<FinanceOfficerModelClass3> loadedList = (List<FinanceOfficerModelClass3>) inputStream.readObject();
             FinanceOfficerModelClass3List.addAll(loadedList);
 
 //            userList = (List<User>) inputStream.readObject();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+        } catch (ClassNotFoundException | IOException e) {
             e.printStackTrace();
         }
     }
@@ -77,47 +71,37 @@ public class FinanceOfficer7 {
     }
 
     @FXML
-    void AddDataOnActionButton(ActionEvent event) {
-        String Budget = BudgetTextField.getText();
-        String amount = amountTextField.getText();
+    void AddDataOnActionButton(ActionEvent actionEvent) {
+        String budgetStr = BudgetTextField.getText();
+        String amountStr = amountTextField.getText();
         LocalDate date = datePicker.getValue();
         String category = CategoryTypeComboBox.getValue();
-        if (Budget.isBlank() || amount.isBlank() || date == null || category == null) {
-            StatusLabel.setText("Please provide all inputs");
-            return;
-        }
-//        if (password.length() < 8) {
-//            messageLabel.setText("Password must be at least 8 characters long!");
-//            return;
 
-        double budgetInput;
-        int amountInput;
-        try {
-            budgetInput = Double.parseDouble(Budget);
-        } catch (NumberFormatException e) {
-            StatusLabel.setText("Invalid budget value. Please enter a number.");
+        if (budgetStr.isBlank() || amountStr.isBlank() || date == null || category == null) {
+            showAlert("Input Error", "Please fill in all fields before adding data.");
             return;
         }
 
         try {
-            amountInput = Integer.parseInt(amount);
+            double budget = Double.parseDouble(budgetStr);
+            int amount = Integer.parseInt(amountStr);
+
+            FinanceOfficerModelClass3 record = new FinanceOfficerModelClass3(date, amount, category, budget);
+            FinanceOfficerModelClass3List.add(record);
+            financialDataTableView.getItems().add(record);
+
+            StatusLabel.setText("Record added successfully.");
+
+            // Clear inputs
+            BudgetTextField.clear();
+            amountTextField.clear();
+            datePicker.setValue(null);
+            CategoryTypeComboBox.setValue(null);
+
         } catch (NumberFormatException e) {
-            StatusLabel.setText("Invalid amount value. Please enter an integer.");
-            return;
+            showAlert("Invalid Input", "Amount must be an integer and budget must be a valid number.");
         }
-
-        FinanceOfficerModelClass3 user = new FinanceOfficerModelClass3(Budget, amount, date);
-        FinanceOfficerModelClass3List.add(user);
-        financialDataTableView.getItems().add(user);
-        StatusLabel.setText(" added successfully");
-//        System.out.println("Currently " + userList.size() + " users in the list");
-
-        BudgetTextField.setText("");
-        amountTextField.setText("");
-        datePicker.setValue(null);
-        CategoryTypeComboBox.setValue(null);
     }
-
 
     @FXML
     void DeleteDataOnActionButton(ActionEvent event) {
@@ -133,20 +117,15 @@ public class FinanceOfficer7 {
 
     @FXML
     void EditDataOnActionButton(ActionEvent event) throws IOException {
-        FinanceOfficerModelClass3 record = financialDataTableView.getSelectionModel().getSelectedItem();
-        if (record != null) {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("FinanceOfficer7_View.fxml"));
-            Parent root = loader.load();
-
-            FinanceOfficer7 controller = loader.getController();
-            controller.setFinanceOfficerModelClass3(record);
-
-            Stage stage = (Stage) StatusLabel.getScene().getWindow();
-            stage.setScene(new Scene(root));
+        try (ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream("FinanceOfficerModelClass3.bin"))) {
+            outputStream.writeObject(FinanceOfficerModelClass3List);
+            StatusLabel.setText("Saved to file.");
+        } catch (IOException e) {
+            e.printStackTrace();
+            StatusLabel.setText("Could not save data.");
         }
     }
-    private void setFinanceOfficerModelClass3(FinanceOfficerModelClass3 record) {
-    }
+
 
     @FXML
     void ReturnHomeOnActionButton(ActionEvent actionEvent) throws IOException {
@@ -162,7 +141,7 @@ public class FinanceOfficer7 {
 
     @FXML
     public void saveToFileOnActionButton(ActionEvent actionEvent) {
-        try (ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream("data/FinanceOfficerModelClass3.bin"))) {
+        try (ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream("FinanceOfficerModelClass3.bin"))) {
             outputStream.writeObject(FinanceOfficerModelClass3List);
             StatusLabel.setText("Successfully saved to file.");
         } catch (IOException e) {

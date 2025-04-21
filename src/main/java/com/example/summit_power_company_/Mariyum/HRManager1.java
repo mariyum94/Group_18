@@ -37,7 +37,7 @@ public class HRManager1 {
     }
 
     @FXML
-    void SaveEmployeeOnActionButton(ActionEvent event) {
+    void SaveEmployeeOnActionButton(ActionEvent event) throws IOException {
         try (ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream("HRManager1.bin"))) {
             outputStream.writeObject(HRManagerModelClass4list);
             statusLabel.setText("Successfully saved to file.");
