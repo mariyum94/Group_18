@@ -11,23 +11,34 @@ import java.util.ArrayList;
 
 public class HRManager7 {
     @FXML
-    private TableColumn Payrollcolumn;
+    private TableColumn<HRManagerModelClass3, Integer> Payrollcolumn;
+
     @FXML
-    private TableColumn Performancecolumn;
+    private TableColumn<HRManagerModelClass3, String> Performancecolumn;
+
+    @FXML
+    private TableColumn<HRManagerModelClass3, Integer> Attendancecolumn;
+
     @FXML
     private TextField performancetextfield;
-    @FXML
-    private TableView reportTableview;
-    @FXML
-    private Label statusmassage;
+
     @FXML
     private TextField attendancetextfield;
-    @FXML
-    private TableColumn Attendancecolumn;
+
     @FXML
     private TextField payrolltextfield;
 
-    static ArrayList<HRManagerModelClass3> HRManagerModelClass3list= new ArrayList<>();
+    @FXML
+    private TableView<HRManagerModelClass3> reportTableview;
+
+    @FXML
+    private Label statusmassage;
+
+    @FXML
+    private TextArea textArea;
+
+    static ArrayList<HRManagerModelClass3> HRManagerModelClass3list = new ArrayList<>();
+
     @FXML
     public void initialize() {
         Payrollcolumn.setCellValueFactory(new PropertyValueFactory<>("Payroll"));
@@ -35,8 +46,8 @@ public class HRManager7 {
         Attendancecolumn.setCellValueFactory(new PropertyValueFactory<>("Attendance"));
 
         reportTableview.getItems().addAll(HRManagerModelClass3list);
-
     }
+
     @FXML
     public void ReturnHomeOnActionButton(ActionEvent actionEvent) throws IOException {
         SceneSwitcher.switchTo("HRManagerDashboard_View.fxml", actionEvent);
@@ -44,20 +55,21 @@ public class HRManager7 {
 
     @FXML
     public void ExporttoPDFOnActionButton(ActionEvent actionEvent) {
+
     }
 
     @FXML
     public void WritetoGenerateReportFileOnActionButton(ActionEvent actionEvent) {
-        //dont have checkbox
-        try (FileWriter writer = new FileWriter("HRManager7.txt", false)) {
-            writer.write("Attendance: " + attendancetextfield.getText() + "\n");
-            writer.write("Payroll: " + payrolltextfield.getText() + "\n");
-            writer.write("Performance: " + performancetextfield.getText() + "\n");
+        try
+                (FileWriter writer = new FileWriter("HRManager7.txt", false)) {
+            writer.write(textArea.getText());
             statusmassage.setText("File saved successfully!");
         } catch (IOException e) {
             statusmassage.setText("Could not save!");
+            showAlert("Error", "Something went wrong while saving the file.");
         }
     }
+
     private void showAlert(String title, String content) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(title);

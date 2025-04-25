@@ -3,15 +3,21 @@ package com.example.summit_power_company_.Mariyum;
 import java.io.Serializable;
 
 public class HRManagerModelClass3 implements Serializable {
-    private String payroll;
+    private Integer payroll;
     private String performance;
-    private String attendance;
+    private Integer attendance;
 
-    public String getPayroll() {
+    public HRManagerModelClass3(Integer payroll, String performance, Integer attendance) {
+        this.payroll = payroll;
+        this.performance = performance;
+        this.attendance = attendance;
+    }
+
+    public Integer getPayroll() {
         return payroll;
     }
 
-    public void setPayroll(String payroll) {
+    public void setPayroll(Integer payroll) {
         this.payroll = payroll;
     }
 
@@ -23,27 +29,20 @@ public class HRManagerModelClass3 implements Serializable {
         this.performance = performance;
     }
 
-    public String getAttendance() {
+    public Integer getAttendance() {
         return attendance;
     }
 
-    public void setAttendance(String attendance) {
+    public void setAttendance(Integer attendance) {
         this.attendance = attendance;
-    }
-
-    public HRManagerModelClass3(String payroll, String performance, String attendance) {
-        this.payroll = payroll;
-        this.performance = performance;
-        this.attendance = attendance;
-
     }
 
     @Override
     public String toString() {
-        return "HRManagerModelClass4{" +
-                "payroll='" + payroll + '\'' +
+        return "HRManagerModelClass3{" +
+                "payroll=" + payroll +
                 ", performance='" + performance + '\'' +
-                ", attendance='" + attendance + '\'' +
+                ", attendance=" + attendance +
                 '}';
     }
 }

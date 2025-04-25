@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
@@ -32,5 +33,6 @@
    <TextField fx:id="attendancetextfield" layoutX="159.0" layoutY="137.0" />
    <TextField fx:id="performancetextfield" layoutX="159.0" layoutY="173.0" />
    <Label fx:id="statusmassage" layoutX="226.0" layoutY="447.0" prefHeight="18.0" prefWidth="126.0" />
+   <TextArea fx:id="textArea" layoutX="352.0" layoutY="116.0" prefHeight="67.0" prefWidth="208.0" />
 
 </AnchorPane>
